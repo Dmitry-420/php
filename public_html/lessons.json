@@ -1,0 +1,3010 @@
+{
+  "lessons": [
+    
+    {
+      "id": "lesson155",
+      "title": "Урок 1. Термины",
+      "subtitle": "30 слов, которые покрывают 90% кода. С переводом на человеческий.",
+      "blocks": [
+        {
+          "type": "grid",
+          "cards": [
+            {
+              "type": "table",
+              "title": "Условия",
+              "rows": [
+                { "code": "if", "desc": "если", "example": "if ($x > 5) { ... }", "human": "Если x больше 5 — делай то, что в скобках." },
+                { "code": "else", "desc": "иначе", "example": "else { ... }", "human": "Если условие выше не сработало — делай это." },
+                { "code": "elseif", "desc": "иначе если", "example": "elseif ($x == 0) { ... }", "human": "Первое не сработало, но если x равен 0 — делай это." },
+                { "code": "true / false", "desc": "правда / ложь", "example": "$ok = true;", "human": "Переменная $ok хранит «да» (true)." },
+                { "code": "null", "desc": "пусто, ничего", "example": "$x = null;", "human": "Переменная пустая, там ничего нет." }
+              ]
+            },
+            {
+              "type": "table",
+              "title": "Циклы",
+              "rows": [
+                { "code": "foreach", "desc": "для каждого (по массиву)", "example": "foreach ($arr as $x) { ... }", "human": "Бери из массива $arr каждый элемент по очереди, называй его $x и делай с ним что-то." },
+                { "code": "as", "desc": "как (переименовать)", "example": "foreach ($arr as $k => $v)", "human": "Бери каждый элемент: ключ называй $k, значение называй $v." },
+                { "code": "for", "desc": "цикл со счётчиком", "example": "for ($i = 0; $i < 10; $i++)", "human": "Начни с i=0. Пока i меньше 10 — делай код и увеличивай i на 1." },
+                { "code": "while", "desc": "пока (условие)", "example": "while ($x < 10) { ... }", "human": "Пока x меньше 10 — повторяй код." },
+                { "code": "break", "desc": "прервать цикл", "example": "if ($x == 5) break;", "human": "Если x равен 5 — выходи из цикла прямо сейчас." },
+                { "code": "continue", "desc": "пропустить итерацию", "example": "if ($x == 0) continue;", "human": "Если x равен 0 — пропусти этот круг." }
+              ]
+            },
+            {
+              "type": "table",
+              "title": "Функции",
+              "rows": [
+                { "code": "function", "desc": "функция", "example": "function foo($a) { ... }", "human": "Создаю функцию с именем foo, принимает $a." },
+                { "code": "return", "desc": "вернуть значение", "example": "return $x;", "human": "Отдаю $x наружу и выхожу из функции." },
+                { "code": "use", "desc": "использовать (подключить)", "example": "use App\\Models\\User;", "human": "Подключаю класс User, чтобы использовать по короткому имени." }
+              ]
+            },
+            {
+              "type": "table",
+              "title": "Переменные и массивы",
+              "rows": [
+                { "code": "$x", "desc": "переменная (всегда с $)", "example": "$x = 5;", "human": "Создаю переменную x и кладу туда число 5." },
+                { "code": "$arr = []", "desc": "пустой массив", "example": "$arr = [1, 2, 3];", "human": "Создаю массив с тремя числами." },
+                { "code": "=>", "desc": "ключ соответствует значению", "example": "['name' => 'Тим']", "human": "В массиве: ключ «name» хранит «Тим»." },
+                { "code": "isset($x)", "desc": "существует и не null?", "example": "if (isset($seen[$x])) { ... }", "human": "Проверяю: есть ли такой ключ и не пустой ли он." },
+                { "code": "empty($x)", "desc": "пусто? (0, \"\", null, [])", "example": "if (empty($arr)) { ... }", "human": "Проверяю: массив пустой или равен 0 / пустой строке / null?" },
+                { "code": "count($arr)", "desc": "сколько элементов", "example": "count($arr)", "human": "Скажи, сколько элементов в массиве." },
+                { "code": "unset($x)", "desc": "удалить", "example": "unset($arr['key']);", "human": "Удали переменную или ключ из массива." }
+              ]
+            },
+            {
+              "type": "table",
+              "title": "Типы",
+              "rows": [
+                { "code": "int", "desc": "целое число", "example": "$x = 5;", "human": "Число без запятой: 5, -10, 100." },
+                { "code": "float", "desc": "дробное", "example": "$x = 3.14;", "human": "Число с точкой: 3.14, 0.5." },
+                { "code": "string", "desc": "строка", "example": "$x = \"привет\";", "human": "Текст в кавычках." },
+                { "code": "bool", "desc": "правда/ложь", "example": "$x = true;", "human": "Только true или false." },
+                { "code": "array", "desc": "массив", "example": "$x = [1, 2];", "human": "Список значений в квадратных скобках." },
+                { "code": "null", "desc": "пусто", "example": "$x = null;", "human": "Ничего. Не ноль, не пустая строка." }
+              ]
+            },
+            {
+              "type": "table",
+              "title": "ООП",
+              "rows": [
+                { "code": "class", "desc": "класс", "example": "class User { ... }", "human": "Создаю шаблон под названием User." },
+                { "code": "new", "desc": "создать объект", "example": "$u = new User();", "human": "По чертежу User создаю объект." },
+                { "code": "public", "desc": "доступно всем", "example": "public $name;", "human": "Доступно из любого места программы." },
+                { "code": "private", "desc": "только внутри класса", "example": "private $balance;", "human": "Видят только внутри этого класса." },
+                { "code": "protected", "desc": "класс + наследники", "example": "protected $config;", "human": "Видят этот класс и его «дети»." },
+                { "code": "extends", "desc": "наследовать", "example": "class Admin extends User", "human": "Admin — разновидность User, берёт всё от него." },
+                { "code": "$this", "desc": "этот объект", "example": "$this->name", "human": "Обращаюсь к свойству объекта, внутри которого нахожусь." },
+                { "code": "static", "desc": "принадлежит классу", "example": "User::count()", "human": "Вызываю метод прямо у класса, без объекта." }
+              ]
+            },
+            {
+              "type": "table",
+              "title": "Ошибки",
+              "rows": [
+                { "code": "try", "desc": "попробовать", "example": "try { ... }", "human": "Попробуй выполнить код. Если сломается — перейди в catch." },
+                { "code": "catch", "desc": "поймать ошибку", "example": "catch (Exception $e) { ... }", "human": "Если была ошибка — прими её и обработай." },
+                { "code": "throw", "desc": "бросить исключение", "example": "throw new Exception(\"Ой\");", "human": "Сообщаю: тут проблема." },
+                { "code": "finally", "desc": "в любом случае", "example": "finally { ... }", "human": "Этот код выполнится всегда." }
+              ]
+            },
+            {
+              "type": "table",
+              "title": "Вывод на экран",
+              "rows": [
+                { "code": "echo", "desc": "вывести", "example": "echo \"привет\";", "human": "Покажи на экране текст «привет»." },
+                { "code": "var_dump", "desc": "показать что внутри", "example": "var_dump($x);", "human": "Покажи, что лежит в $x — тип и значение." },
+                { "code": "print_r", "desc": "показать массив читаемо", "example": "print_r($arr);", "human": "Покажи массив в удобном виде." }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "note",
+          "html": "<strong>Главное:</strong> не учи наизусть. Просто глянь в шпаргалку, когда что-то непонятно. Через 2 недели практики эти слова станут для тебя как <code>add_action</code> — просто знаешь, что делает."
+        }
+      ]
+    },
+
+    {
+      "id": "lesson2",
+      "title": "Урок 2. Символы",
+      "subtitle": "Что значит каждый знак. Где ставится. Почему именно так.",
+      "blocks": [
+        { "type": "heading", "text": "1. Открытие и закрытие PHP" },
+        {
+          "type": "symbol-card",
+          "symbol": "<?php",
+          "meaning": "Начало PHP-кода",
+          "text": "Говорит серверу: «Дальше идёт PHP, выполняй его».",
+          "code": "<?php\n// тут PHP-код\n$x = 5;",
+          "human": "Читается: «Открываю PHP, дальше — код на PHP»."
+        },
+        {
+          "type": "symbol-card",
+          "symbol": "?>",
+          "meaning": "Конец PHP-кода",
+          "text": "Закрывает блок PHP. Но в конце файла его ставить НЕ надо."
+        },
+        {
+          "type": "warn",
+          "html": "⚠️ Если поставишь <code>?></code> в конце файла и случайно оставишь пробел — WordPress может сломаться. Правило: в чисто PHP-файлах <code>?></code> не ставить."
+        },
+
+        { "type": "heading", "text": "2. Переменные и присваивание" },
+        {
+          "type": "symbol-card",
+          "symbol": "$",
+          "meaning": "Знак переменной",
+          "text": "В PHP все переменные начинаются с $. Это не «доллар», а маркер.",
+          "code": "$name = \"Тим\";\n$age = 30;\n$isAdmin = true;",
+          "human": "Читается: «переменная name равна \"Тим\". Переменная age равна 30»."
+        },
+        {
+          "type": "symbol-card",
+          "symbol": "=",
+          "meaning": "Присвоить (положить значение)",
+          "text": "НЕ «равно». Это «положи в переменную».",
+          "code": "$x = 5;      // положи в x число 5\n$x = $x + 1;  // возьми x, прибавь 1, положи обратно",
+          "human": "Справа — значение. Слева — куда положить."
+        },
+        {
+          "type": "symbol-card",
+          "symbol": "==",
+          "meaning": "Сравнить (равно ли?)",
+          "text": "Спрашивает: «эти два значения равны?» Возвращает true или false.",
+          "code": "if ($x == 5) {\n    echo \"x равен пяти\";\n}",
+          "human": "Читается: «если x равен 5 — покажи \"x равен пяти\"»."
+        },
+        {
+          "type": "symbol-card",
+          "symbol": "===",
+          "meaning": "Строгое сравнение (равно И того же типа?)",
+          "text": "В PHP \"5\" == 5 — true, а \"5\" === 5 — false.",
+          "code": "$x = \"5\";      // строка\nif ($x === 5) { // false\n    // не выполнится\n}"
+        },
+        {
+          "type": "warn",
+          "html": "⚠️ В 90% случаев используй <code>===</code>, а не <code>==</code>. Так безопаснее."
+        },
+        {
+          "type": "symbol-card",
+          "symbol": "!= и !==",
+          "meaning": "Не равно / строго не равно",
+          "code": "if ($x != 5) { // если x НЕ равен 5\n    // ...\n}"
+        },
+        {
+          "type": "symbol-card",
+          "symbol": "!",
+          "meaning": "НЕ (отрицание)",
+          "text": "Переворачивает значение: true → false.",
+          "code": "if (!$isAdmin) {\n    // если НЕ админ\n}"
+        },
+
+        { "type": "heading", "text": "3. Арифметика и логика" },
+        {
+          "type": "grid-2",
+          "cards": [
+            { "type": "symbol-card", "symbol": "+", "meaning": "Плюс", "code": "$x = 2 + 3; // 5" },
+            { "type": "symbol-card", "symbol": "-", "meaning": "Минус", "code": "$x = 5 - 2; // 3" },
+            { "type": "symbol-card", "symbol": "*", "meaning": "Умножить", "code": "$x = 3 * 4; // 12" },
+            { "type": "symbol-card", "symbol": "/", "meaning": "Разделить", "code": "$x = 10 / 2; // 5" },
+            { "type": "symbol-card", "symbol": "%", "meaning": "Остаток от деления", "code": "$x = 10 % 3; // 1", "human": "10 делится на 3 с остатком 1." },
+            { "type": "symbol-card", "symbol": ".", "meaning": "Склеить строки", "code": "$s = \"Привет, \" . $name;", "human": "«Привет, » + значение $name в одну строку." },
+            { "type": "symbol-card", "symbol": "&&", "meaning": "И (оба условия)", "code": "if ($a > 0 && $b > 0) {}", "human": "Если a больше 0 И b больше 0." },
+            { "type": "symbol-card", "symbol": "||", "meaning": "Или (хотя бы одно)", "code": "if ($a > 0 || $b > 0) {}", "human": "Если a больше 0 ИЛИ b больше 0." }
+          ]
+        },
+
+        { "type": "heading", "text": "4. Скобки — три вида, три роли" },
+        {
+          "type": "symbol-card",
+          "symbol": "( )",
+          "meaning": "Круглые — группировка и вызов",
+          "code": "// 1. Вызов функции\n$len = count($arr);\n\n// 2. Условие в if / foreach / while\nif ($x > 5) {}\n\n// 3. Группировка в математике\n$x = (2 + 3) * 4; // 20, а не 14"
+        },
+        {
+          "type": "symbol-card",
+          "symbol": "{ }",
+          "meaning": "Фигурные — тело блока",
+          "code": "if ($x > 5) {\n    echo \"много\";   // всё это — внутри if\n    echo \"правда\";\n}"
+        },
+        {
+          "type": "symbol-card",
+          "symbol": "[ ]",
+          "meaning": "Квадратные — массив или доступ по ключу",
+          "code": "// 1. Создать массив\n$arr = [1, 2, 3];\n\n// 2. Достать элемент по ключу\n$first = $arr[0]; // 1 (нумерация с нуля!)\n\n// 3. Ассоциативный массив\n$user = ['name' => 'Тим'];\necho $user['name']; // Тим"
+        },
+
+        { "type": "heading", "text": "5. Кавычки — одинарные и двойные" },
+        {
+          "type": "symbol-card",
+          "symbol": "\"двойные\"",
+          "meaning": "Интерполяция переменных",
+          "code": "$name = \"Тим\";\necho \"Привет, $name!\"; // Привет, Тим!",
+          "human": "PHP видит $name и подставляет «Тим»."
+        },
+        {
+          "type": "symbol-card",
+          "symbol": "'одинарные'",
+          "meaning": "Литерал, без замен",
+          "code": "$name = \"Тим\";\necho 'Привет, $name!'; // Привет, $name!",
+          "human": "$name остаётся текстом, не подставляется."
+        },
+        {
+          "type": "warn",
+          "html": "⚡ <strong>Правило:</strong> если не нужна подстановка переменной — используй <code>'одинарные'</code>. Работают быстрее."
+        },
+
+        { "type": "heading", "text": "6. Точка с запятой и другие знаки" },
+        {
+          "type": "symbol-card",
+          "symbol": ";",
+          "meaning": "Конец инструкции",
+          "text": "Как точка в предложении. Обязательна после каждой строки-команды.",
+          "code": "$x = 5;          // ← точка с запятой\necho \"привет\";   // ← точка с запятой"
+        },
+        {
+          "type": "warn",
+          "html": "⚠️ Забыл <code>;</code> — PHP выдаст ошибку. Это самая частая ошибка новичка."
+        },
+        {
+          "type": "symbol-card",
+          "symbol": "//",
+          "meaning": "Комментарий на одну строку",
+          "code": "// это комментарий, PHP его игнорирует\n$x = 5;"
+        },
+        {
+          "type": "symbol-card",
+          "symbol": "/* ... */",
+          "meaning": "Комментарий на много строк",
+          "code": "/*\n  Это комментарий\n  на несколько строк\n*/\n$x = 5;"
+        },
+        {
+          "type": "symbol-card",
+          "symbol": "->",
+          "meaning": "Стрелка к свойству/методу объекта",
+          "code": "$user->name;       // свойство name\n$user->getName();   // метод getName()",
+          "human": "«У объекта $user возьми name / вызови getName»."
+        },
+        {
+          "type": "symbol-card",
+          "symbol": "::",
+          "meaning": "Обращение к статике класса",
+          "code": "User::count();       // статический метод\nUser::$total;       // статическое свойство",
+          "human": "Обращаюсь к классу напрямую, без создания объекта."
+        },
+        {
+          "type": "symbol-card",
+          "symbol": "=>",
+          "meaning": "Соответствие в массиве",
+          "code": "$user = ['name' => 'Тим', 'age' => 30];",
+          "human": "«ключ name хранит \"Тим\", ключ age хранит 30»."
+        },
+        {
+          "type": "symbol-card",
+          "symbol": "\\",
+          "meaning": "Пространство имён (namespace)",
+          "code": "use App\\Models\\User;\nnew \\App\\Models\\User();",
+          "human": "Разделяет «папки» классов. Как слэш в путях к файлам."
+        },
+
+        {
+          "type": "note",
+          "html": "<strong>Урок 2 закончен.</strong> Следующий — Урок 3: <strong>структура PHP-файла</strong> — куда что писать, порядок, точки входа."
+        }
+      ]
+    },
+
+    {
+      "id": "lesson3",
+      "title": "Урок 3. Структура файла",
+      "subtitle": "Что писать в каком порядке. Почему порядок важен. Точки входа.",
+      "blocks": [
+        { "type": "heading", "text": "1. Анатомия PHP-файла" },
+        {
+          "type": "symbol-card",
+          "symbol": "Порядок",
+          "meaning": "Любой PHP-файл состоит из блоков",
+          "code": "<?php                              // 1. открытие\ndeclare(strict_types=1);           // 2. строгие типы\nnamespace App\\Models;              // 3. пространство имён\nuse App\\Services\\Mailer;           // 4. подключения\n\nclass User { ... }                 // 5. сам код"
+        },
+
+        { "type": "heading", "text": "2. Простой файл — без классов" },
+        {
+          "type": "symbol-card",
+          "symbol": "WP-плагин",
+          "meaning": "Структура без ООП",
+          "code": "<?php\n// 1. Открытие\n\n// 2. Подключения\nrequire_once __DIR__ . '/vendor/autoload.php';\n\n// 3. Константы\ndefine('MY_PLUGIN_VERSION', '1.0.0');\n\n// 4. Функции\nfunction my_plugin_init() {\n    echo \"Плагин запущен\";\n}\n\n// 5. Хуки\nadd_action('init', 'my_plugin_init');\n\n// 6. Точка входа\nmy_plugin_init();",
+          "human": "Открываю PHP, подключаю библиотеки, объявляю константы, объявляю функции, вешаю хуки, запускаю."
+        },
+
+        { "type": "heading", "text": "3. Файл с классом (современный стиль)" },
+        {
+          "type": "symbol-card",
+          "symbol": "ООП",
+          "meaning": "Так пишут в Laravel, Symfony",
+          "code": "<?php\n\ndeclare(strict_types=1);\n\nnamespace App\\Models;\n\nuse App\\Services\\Mailer;\n\nclass User\n{\n    private $name;\n    private $email;\n\n    public function __construct(string $name, string $email)\n    {\n        $this->name = $name;\n        $this->email = $email;\n    }\n\n    public function getName(): string\n    {\n        return $this->name;\n    }\n}",
+          "human": "Открываю PHP, строгие типы, я в namespace App\\Models, подключаю Mailer, объявляю класс User."
+        },
+
+        { "type": "heading", "text": "4. Правила порядка" },
+        {
+          "type": "grid-2",
+          "cards": [
+            { "type": "symbol-card", "symbol": "namespace", "meaning": "Всегда после declare, до use", "code": "namespace App\\Models;\nuse App\\Services\\Mailer;" },
+            { "type": "symbol-card", "symbol": "use", "meaning": "Всегда до класса/функций", "code": "use App\\Services\\Mailer;\n\nclass User { ... }" },
+            { "type": "symbol-card", "symbol": "require / include", "meaning": "Подключение файлов", "code": "require_once 'config.php';" },
+            { "type": "symbol-card", "symbol": "define", "meaning": "Константа", "code": "define('VERSION', '1.0');" }
+          ]
+        },
+
+        { "type": "heading", "text": "5. Точка входа — что это" },
+        {
+          "type": "symbol-card",
+          "symbol": "Точка входа",
+          "meaning": "Место, с которого начинается выполнение",
+          "code": "<?php\nrequire 'functions.php';\n\necho \"Привет, мир!\"; // ← выполнится первым",
+          "human": "Когда браузер открывает index.php — PHP читает сверху вниз и выполняет."
+        },
+        {
+          "type": "warn",
+          "html": "⚠️ <strong>Важно:</strong> PHP выполняет код <strong>сверху вниз</strong>. Функции можно объявлять в любом порядке (PHP их «поднимает»), но обычный код — строго по порядку."
+        },
+
+        {
+          "type": "note",
+          "html": "<strong>Главное:</strong> структура файла — как оглавление в книге. Сначала «кто я» (namespace), потом «что мне нужно» (use, require), потом «что я делаю» (класс/функции), в конце — «запуск» (хуки, вызовы)."
+        }
+      ]
+    },
+
+    {
+      "id": "lesson4",
+      "title": "Урок 4. Переменные и типы",
+      "subtitle": "Как хранить данные. Что такое тип. Почему PHP иногда «странный».",
+      "blocks": [
+        { "type": "heading", "text": "1. Переменная — это коробка" },
+        {
+          "type": "symbol-card",
+          "symbol": "Переменная",
+          "meaning": "Именованная ячейка памяти",
+          "code": "$x = 5;          // коробка x, внутри 5\n$name = \"Тим\";   // коробка name, внутри \"Тим\"\n$arr = [1, 2, 3];  // коробка arr, внутри массив",
+          "human": "Слева — имя коробки. Справа — что положили."
+        },
+
+        { "type": "heading", "text": "2. Типы — что можно положить" },
+        {
+          "type": "grid",
+          "cards": [
+            {
+              "type": "table",
+              "title": "Скалярные (простые)",
+              "rows": [
+                { "code": "int", "desc": "целое число", "example": "$x = 42;", "human": "5, -10, 100, 0" },
+                { "code": "float", "desc": "дробное", "example": "$x = 3.14;", "human": "3.14, 0.5, -2.7" },
+                { "code": "string", "desc": "строка", "example": "$x = \"привет\";", "human": "Текст в кавычках" },
+                { "code": "bool", "desc": "правда/ложь", "example": "$x = true;", "human": "Только true или false" }
+              ]
+            },
+            {
+              "type": "table",
+              "title": "Составные",
+              "rows": [
+                { "code": "array", "desc": "массив", "example": "$x = [1, 2, 3];", "human": "Список значений" },
+                { "code": "object", "desc": "объект", "example": "$x = new User();", "human": "Экземпляр класса" },
+                { "code": "null", "desc": "пусто", "example": "$x = null;", "human": "Ничего нет" },
+                { "code": "callable", "desc": "функция", "example": "$x = 'my_func';", "human": "Имя функции или замыкание" }
+              ]
+            }
+          ]
+        },
+
+        { "type": "heading", "text": "3. Как узнать тип" },
+        {
+          "type": "symbol-card",
+          "symbol": "Проверка",
+          "meaning": "Три способа узнать тип",
+          "code": "$x = 5;\n\nvar_dump($x);        // int(5)\ngettype($x);         // \"integer\"\nis_int($x);          // true\nis_string($x);       // false",
+          "human": "var_dump — покажи тип и значение. gettype — скажи тип строкой. is_int — это целое число?"
+        },
+
+        { "type": "heading", "text": "4. Приведение типов (кастинг)" },
+        {
+          "type": "symbol-card",
+          "symbol": "(int) (string) (bool)",
+          "meaning": "Превращение типа в другой",
+          "code": "$x = \"5\";         // строка \"5\"\n$y = (int) $x;     // теперь число 5\n\n$a = 5;\n$b = (string) $a; // теперь строка \"5\"\n\n$c = (bool) 0;     // false\n$d = (bool) 1;     // true",
+          "human": "(int) — «преврати в целое». (string) — «преврати в строку». (bool) — «преврати в правду/ложь»."
+        },
+        {
+          "type": "warn",
+          "html": "⚠️ <strong>Осторожно:</strong> PHP иногда приводит типы <strong>автоматически</strong>. Например, <code>\"5\" + 3</code> даст <code>8</code>, хотя \"5\" — строка. Это называется «жонглирование типами» и часто приводит к багам. Поэтому используй <code>===</code>."
+        },
+
+        { "type": "heading", "text": "5. Правда и ложь — что считается «пустым»" },
+        {
+          "type": "symbol-card",
+          "symbol": "Falsy values",
+          "meaning": "Что при проверке становится false",
+          "code": "// Всё это — false:\nfalse\n0\n0.0\n\"\"         // пустая строка\n\"0\"        // строка с нулём\n[]\nnull\n\n// Всё остальное — true:\n1\n-1\n\"привет\"\n[1, 2]\ntrue",
+          "human": "Если в if положить пустую строку или 0 — условие не сработает."
+        },
+        {
+          "type": "symbol-card",
+          "symbol": "if ($name)",
+          "meaning": "Частый приём",
+          "code": "if ($name) {\n    // сработает, только если $name не пустая\n}",
+          "human": "Читается: «если $name не пустой — делай»."
+        },
+
+        { "type": "heading", "text": "6. Константы — неизменяемые значения" },
+        {
+          "type": "symbol-card",
+          "symbol": "define / const",
+          "meaning": "Значение, которое нельзя изменить",
+          "code": "define('SITE_NAME', 'Мой сайт');\necho SITE_NAME; // Мой сайт\n\n// или так (современнее):\nconst MAX_USERS = 100;",
+          "human": "Константа пишется без $, обычно ЗАГЛАВНЫМИ. Её нельзя изменить."
+        },
+
+        { "type": "heading", "text": "7. Суперглобальные массивы — данные «извне»" },
+        {
+          "type": "symbol-card",
+          "symbol": "$_GET, $_POST, $_SESSION",
+          "meaning": "Специальные массивы, которые PHP создаёт сам",
+          "code": "$_GET['name']       // параметр из URL\n$_POST['email']     // данные из формы\n$_SESSION['user_id'] // данные сессии\n$_COOKIE['theme']   // куки\n$_SERVER['REQUEST_URI'] // какой URL запросили\n$_FILES['avatar']   // загруженный файл"
+        },
+        {
+          "type": "warn",
+          "html": "⚠️ <strong>Безопасность:</strong> никогда не доверяй <code>$_GET</code>, <code>$_POST</code>, <code>$_COOKIE</code>. Всегда проверяй и очищай. Иначе — SQL-инъекции и XSS."
+        },
+
+        {
+          "type": "note",
+          "html": "<strong>Главное:</strong> переменная — коробка. Тип — что в коробке. PHP слабо типизирован, поэтому иногда сам превращает типы — и это опасно. Используй <code>===</code>, проверяй типы через <code>is_int()</code>, не доверяй данным извне.<br><br><strong>Домашка:</strong> открой свой WP-плагин и найди в нём: 3 переменные разных типов, 1 константу, 1 использование <code>$_POST</code> или <code>$_GET</code>."
+        }
+      ]
+    },
+    
+    {
+      "id": "lesson5",
+      "title": "Урок 5. Функции",
+      "subtitle": "Как писать код, который можно переиспользовать. Параметры, возврат, области видимости.",
+      "blocks": [
+        { "type": "heading", "text": "1. Зачем нужны функции" },
+        {
+          "type": "symbol-card",
+          "symbol": "Функция",
+          "meaning": "Кусок кода с именем, который можно вызывать много раз",
+          "text": "Вместо того чтобы копипастить один и тот же код — пишем функцию один раз и вызываем когда надо.",
+          "code": "// Без функции — копипаста\n$sum1 = 2 + 3;\necho $sum1;\n\n$sum2 = 10 + 5;\necho $sum2;\n\n// С функцией — один раз написали\nfunction sum($a, $b) {\n    return $a + $b;\n}\n\necho sum(2, 3);    // 5\necho sum(10, 5);   // 15",
+          "human": "Функция sum принимает два числа и возвращает их сумму. Вызываю сколько нужно раз."
+        },
+
+        { "type": "heading", "text": "2. Анатомия функции" },
+        {
+          "type": "symbol-card",
+          "symbol": "function",
+          "meaning": "Объявление функции",
+          "code": "function имяФункции($параметр1, $параметр2) {\n    // тело функции\n    return $результат;\n}",
+          "human": "«function» — ключевое слово. Дальше имя. В скобках — параметры. В фигурных — тело. «return» — что вернуть."
+        },
+        {
+          "type": "symbol-card",
+          "symbol": "$a, $b",
+          "meaning": "Параметры — что функция принимает",
+          "code": "function sum($a, $b) {\n    return $a + $b;\n}\n\necho sum(2, 3);  // $a = 2, $b = 3 → 5",
+          "human": "Когда вызываешь sum(2, 3) — внутри функции $a станет 2, $b станет 3."
+        },
+        {
+          "type": "symbol-card",
+          "symbol": "return",
+          "meaning": "Вернуть значение и выйти",
+          "code": "function sum($a, $b) {\n    return $a + $b;   // ← функция отдаёт результат\n    echo \"не выполнится\"; // ← код после return игнорируется\n}\n\n$result = sum(2, 3);  // $result = 5",
+          "human": "return отдаёт значение наружу и СРАЗУ выходит из функции. Всё, что после return — не выполнится."
+        },
+        {
+          "type": "warn",
+          "html": "⚠️ Если функция ничего не возвращает — она вернёт <code>null</code>. Это не ошибка, но надо помнить."
+        },
+
+        { "type": "heading", "text": "3. Функция с типами (современный стиль)" },
+        {
+          "type": "symbol-card",
+          "symbol": "int, string, bool",
+          "meaning": "Типы параметров и возврата",
+          "code": "function sum(int $a, int $b): int {\n    return $a + $b;\n}\n\nfunction greet(string $name): string {\n    return \"Привет, $name!\";\n}\n\necho sum(2, 3);        // 5\necho greet(\"Тим\");     // Привет, Тим!",
+          "human": "int $a — «принимаю целое число». : int — «возвращаю целое число». Если передать не то — PHP выдаст ошибку."
+        },
+
+        { "type": "heading", "text": "4. Значения по умолчанию" },
+        {
+          "type": "symbol-card",
+          "symbol": "= значение",
+          "meaning": "Параметр можно не передавать",
+          "code": "function greet($name = \"гость\") {\n    return \"Привет, $name!\";\n}\n\necho greet();         // Привет, гость!\necho greet(\"Тим\");    // Привет, Тим!",
+          "human": "Если имя не передали — используется «гость». Если передали — используется переданное."
+        },
+
+        { "type": "heading", "text": "5. Область видимости переменных" },
+        {
+          "type": "symbol-card",
+          "symbol": "Локальные vs глобальные",
+          "meaning": "Переменные внутри функции не видны снаружи",
+          "code": "$x = 5;   // глобальная\n\nfunction test() {\n    // $x тут НЕ видна\n    $y = 10;  // локальная, только внутри функции\n    return $y;\n}\n\necho test();  // 10\necho $y;      // ОШИБКА: $y не существует снаружи",
+          "human": "Что создано внутри функции — остаётся внутри. Снаружи не видно."
+        },
+        {
+          "type": "symbol-card",
+          "symbol": "global",
+          "meaning": "Если очень нужно достучаться до глобальной",
+          "code": "$x = 5;\n\nfunction test() {\n    global $x;   // теперь $x видна\n    return $x + 1;\n}\n\necho test();  // 6",
+          "human": "«global $x» говорит функции: «эта $x — снаружи, не создавай новую»."
+        },
+        {
+          "type": "warn",
+          "html": "⚠️ <code>global</code> — плохая практика. Лучше передавать через параметры. Но в старом WP-коде встречается часто."
+        },
+
+        { "type": "heading", "text": "6. Стрелочные функции (PHP 7.4+)" },
+        {
+          "type": "symbol-card",
+          "symbol": "fn() =>",
+          "meaning": "Короткая запись функции",
+          "code": "// Обычная\n$double = function($x) {\n    return $x * 2;\n};\n\n// Стрелочная (короче)\n$double = fn($x) => $x * 2;\n\necho $double(5);  // 10",
+          "human": "«fn($x) => $x * 2» читается: «функция от x возвращает x * 2». Коротко для простых случаев."
+        },
+
+        { "type": "heading", "text": "7. Как это выглядит в WP" },
+        {
+          "type": "symbol-card",
+          "symbol": "add_action",
+          "meaning": "Хук — это тоже вызов функции",
+          "code": "// Объявляю функцию\nfunction my_custom_init() {\n    echo \"Сработал хук init\";\n}\n\n// Говорю WP: когда дойдёшь до 'init' — вызови my_custom_init\nadd_action('init', 'my_custom_init');",
+          "human": "Хук — это отложенный вызов функции. WP сам вызывает её, когда наступает событие."
+        },
+        {
+          "type": "symbol-card",
+          "symbol": "add_filter",
+          "meaning": "Фильтр — функция, которая меняет данные",
+          "code": "function change_title($title) {\n    return \"[МОЙ САЙТ] \" . $title;\n}\n\nadd_filter('the_title', 'change_title');",
+          "human": "Фильтр принимает значение, что-то с ним делает и возвращает обратно. WP подставит результат."
+        },
+
+        {
+          "type": "note",
+          "html": "<strong>Главное:</strong> функция — это именованный кусок кода, который можно вызывать много раз. Принимает параметры, возвращает результат через <code>return</code>. Внутри функции — своя область видимости. Не используй <code>global</code> без нужды.<br><br><strong>Домашка:</strong> открой свой WP-плагин и найди в нём: 3 функции, у одной — параметры, у одной — <code>return</code>. Потом напиши свою функцию <code>is_even($n)</code>, которая возвращает <code>true</code>, если число чётное, и <code>false</code> если нет."
+        }
+      ]
+    },
+
+    {
+      "id": "lesson6",
+      "title": "Урок 6. Массивы",
+      "subtitle": "Как хранить много значений в одной переменной. Виды, функции, перебор.",
+      "blocks": [
+        { "type": "heading", "text": "1. Что такое массив" },
+        {
+          "type": "symbol-card",
+          "symbol": "Массив",
+          "meaning": "Коробка с несколькими значениями",
+          "text": "Вместо 10 переменных — один массив с 10 элементами.",
+          "code": "// Плохо: 10 переменных\n$user1 = \"Тим\";\n$user2 = \"Аня\";\n$user3 = \"Борис\";\n\n// Хорошо: один массив\n$users = [\"Тим\", \"Аня\", \"Борис\"];",
+          "human": "Массив — это список. Внутри может быть сколько угодно элементов."
+        },
+
+        { "type": "heading", "text": "2. Два вида массивов" },
+        {
+          "type": "grid-2",
+          "cards": [
+            {
+              "type": "symbol-card",
+              "symbol": "Индексный",
+              "meaning": "Ключи — числа, с нуля",
+              "code": "$fruits = [\"яблоко\", \"банан\", \"груша\"];\n\necho $fruits[0]; // яблоко\necho $fruits[1]; // банан\necho $fruits[2]; // груша",
+              "human": "Первый элемент — индекс 0, второй — 1, и так далее."
+            },
+            {
+              "type": "symbol-card",
+              "symbol": "Ассоциативный",
+              "meaning": "Ключи — строки",
+              "code": "$user = [\n    'name' => 'Тим',\n    'age' => 30,\n    'city' => 'Москва'\n];\n\necho $user['name']; // Тим\necho $user['age'];  // 30",
+              "human": "Вместо номеров — имена ключей. Удобно для описания объектов."
+            }
+          ]
+        },
+
+        { "type": "heading", "text": "3. Добавить и удалить" },
+        {
+          "type": "symbol-card",
+          "symbol": "[] = и unset",
+          "meaning": "Добавить / удалить элемент",
+          "code": "$fruits = [\"яблоко\"];\n\n// Добавить в конец\n$fruits[] = \"банан\";\n$fruits[] = \"груша\";\n// $fruits = [\"яблоко\", \"банан\", \"груша\"]\n\n// Добавить по ключу\n$user['name'] = \"Тим\";\n\n// Удалить\nunset($fruits[1]);  // удалили \"банан\"",
+          "human": "$fruits[] = — «положи в конец». unset — «удали по ключу»."
+        },
+
+        { "type": "heading", "text": "4. Перебор массива" },
+        {
+          "type": "symbol-card",
+          "symbol": "foreach",
+          "meaning": "Пройти по всем элементам",
+          "code": "// Только значения\nforeach ($fruits as $fruit) {\n    echo $fruit . \"\\n\";\n}\n\n// Ключ + значение\nforeach ($user as $key => $value) {\n    echo \"$key: $value\\n\";\n}",
+          "human": "Первый вариант — если нужны только значения. Второй — если и ключи тоже."
+        },
+
+        { "type": "heading", "text": "5. Полезные функции" },
+        {
+          "type": "table",
+          "title": "Работа с массивами",
+          "rows": [
+            { "code": "count($arr)", "desc": "сколько элементов", "example": "count([1,2,3]) // 3" },
+            { "code": "in_array($x, $arr)", "desc": "есть ли значение", "example": "in_array('банан', $fruits)" },
+            { "code": "array_key_exists($k, $arr)", "desc": "есть ли ключ", "example": "array_key_exists('name', $user)" },
+            { "code": "array_keys($arr)", "desc": "все ключи", "example": "array_keys($user) // ['name','age']" },
+            { "code": "array_values($arr)", "desc": "все значения", "example": "array_values($user)" },
+            { "code": "array_merge($a, $b)", "desc": "склеить два массива", "example": "array_merge([1,2], [3,4])" },
+            { "code": "array_sum($arr)", "desc": "сумма чисел", "example": "array_sum([1,2,3]) // 6" },
+            { "code": "sort($arr)", "desc": "сортировать по значению", "example": "sort($fruits)" },
+            { "code": "implode(',', $arr)", "desc": "массив → строка", "example": "implode(', ', $fruits)" },
+            { "code": "explode(',', $str)", "desc": "строка → массив", "example": "explode(',', 'a,b,c')" }
+          ]
+        },
+
+        { "type": "heading", "text": "6. Многомерные массивы" },
+        {
+          "type": "symbol-card",
+          "symbol": "Массив в массиве",
+          "meaning": "Когда нужно хранить сложные структуры",
+          "code": "$users = [\n    ['name' => 'Тим', 'age' => 30],\n    ['name' => 'Аня', 'age' => 25],\n    ['name' => 'Борис', 'age' => 40]\n];\n\nforeach ($users as $user) {\n    echo $user['name'] . \" - \" . $user['age'] . \" лет\\n\";\n}",
+          "human": "Массив пользователей, у каждого — свой набор ключей. Так приходят данные из БД."
+        },
+
+        {
+          "type": "note",
+          "html": "<strong>Главное:</strong> массив — список значений. Бывают индексные (ключи 0,1,2) и ассоциативные (ключи-строки). Перебирать — через <code>foreach</code>. Для работы — <code>count</code>, <code>in_array</code>, <code>array_merge</code> и десятки других функций.<br><br><strong>Домашка:</strong> создай массив из 5 своих любимых фильмов. Выведи их через <code>foreach</code>. Потом добавь ещё один через <code>[] =</code>. Потом удали второй через <code>unset</code>."
+        }
+      ]
+    },
+    
+    {
+      "id": "lesson7",
+      "title": "Урок 7. Строки",
+      "subtitle": "Как работать с текстом. Функции, склейка, поиск, замена.",
+      "blocks": [
+        { "type": "heading", "text": "1. Создание строк" },
+        {
+          "type": "symbol-card",
+          "symbol": "'одинарные' и \"двойные\"",
+          "meaning": "Два способа записать текст",
+          "code": "$name = \"Тим\";\n\n// Двойные — подставляют переменные\necho \"Привет, $name!\";   // Привет, Тим!\n\n// Одинарные — НЕ подставляют\necho 'Привет, $name!';   // Привет, $name!",
+          "human": "Двойные кавычки — «умные», подставляют переменные. Одинарные — «тупые», всё как есть."
+        },
+        {
+          "type": "warn",
+          "html": "⚡ <strong>Правило:</strong> если не нужна подстановка переменной — используй <code>'одинарные'</code>. Они чуть быстрее."
+        },
+
+        { "type": "heading", "text": "2. Склейка строк" },
+        {
+          "type": "symbol-card",
+          "symbol": ".",
+          "meaning": "Точка — склеивает строки",
+          "code": "$first = \"Тим\";\n$last = \"Иванов\";\n\n$full = $first . \" \" . $last;\necho $full; // Тим Иванов\n\n// Или через .= (добавить к существующей)\n$msg = \"Привет, \";\n$msg .= $first;\necho $msg; // Привет, Тим",
+          "human": "Точка — это «плюс» для строк. .= — «добавь к текущей»."
+        },
+
+        { "type": "heading", "text": "3. Длина и обрезка" },
+        {
+          "type": "symbol-card",
+          "symbol": "strlen, substr",
+          "meaning": "Длина и часть строки",
+          "code": "$text = \"Привет, мир!\";\n\necho strlen($text);        // 12 (длина в байтах)\necho mb_strlen($text);     // 12 (длина в символах, для UTF-8)\n\necho substr($text, 0, 6);  // \"Привет\"\necho substr($text, 8);     // \"мир!\"",
+          "human": "strlen — сколько символов. substr(строка, откуда, сколько) — вырезать кусок."
+        },
+        {
+          "type": "warn",
+          "html": "⚠️ Для русского всегда используй <code>mb_*</code> функции: <code>mb_strlen</code>, <code>mb_substr</code>. Обычные <code>strlen</code> и <code>substr</code> считают байты, а русские буквы занимают 2 байта."
+        },
+
+        { "type": "heading", "text": "4. Поиск и замена" },
+        {
+          "type": "symbol-card",
+          "symbol": "strpos, str_replace",
+          "meaning": "Найти и заменить",
+          "code": "$text = \"Привет, мир!\";\n\n// Найти позицию\n$pos = strpos($text, \"мир\");\necho $pos;   // 8\n\n// Заменить\n$new = str_replace(\"мир\", \"Тим\", $text);\necho $new;   // \"Привет, Тим!\"",
+          "human": "strpos — на каком месте строка. str_replace — заменить одно на другое."
+        },
+        {
+          "type": "warn",
+          "html": "⚠️ <code>strpos</code> возвращает <code>false</code>, если не нашёл. Но если нашёл в позиции 0 — тоже вернёт <code>0</code>, что похоже на <code>false</code>. Поэтому проверяй через <code>=== false</code>, а не просто <code>if ($pos)</code>."
+        },
+
+        { "type": "heading", "text": "5. Регистр и пробелы" },
+        {
+          "type": "symbol-card",
+          "symbol": "strtolower, trim",
+          "meaning": "Приведение к нижнему регистру, удаление пробелов",
+          "code": "$text = \"  Привет, МИР!  \";\n\necho strtolower($text);  // \"  привет, мир!  \"\necho strtoupper($text);  // \"  ПРИВЕТ, МИР!  \"\necho trim($text);        // \"Привет, МИР!\"\necho ucfirst(\"привет\"); // \"Привет\"",
+          "human": "strtolower — маленькими. strtoupper — большими. trim — обрезать пробелы с краёв. ucfirst — первая буква заглавная."
+        },
+
+        { "type": "heading", "text": "6. Разбить и склеить" },
+        {
+          "type": "symbol-card",
+          "symbol": "explode, implode",
+          "meaning": "Строка ↔ массив",
+          "code": "// Строка → массив\n$csv = \"яблоко,банан,груша\";\n$arr = explode(\",\", $csv);\n// [\"яблоко\", \"банан\", \"груша\"]\n\n// Массив → строка\n$str = implode(\" | \", $arr);\necho $str; // \"яблоко | банан | груша\"",
+          "human": "explode — «разрежь по разделителю». implode — «склей через разделитель»."
+        },
+
+        { "type": "heading", "text": "7. Форматирование" },
+        {
+          "type": "symbol-card",
+          "symbol": "sprintf",
+          "meaning": "Шаблон с подстановками",
+          "code": "$name = \"Тим\";\n$age = 30;\n\n$msg = sprintf(\"Меня зовут %s, мне %d лет\", $name, $age);\necho $msg; // \"Меня зовут Тим, мне 30 лет\"",
+          "human": "%s — подставить строку. %d — подставить число. Удобно для шаблонов."
+        },
+        {
+          "type": "table",
+          "title": "Спецификаторы sprintf",
+          "rows": [
+            { "code": "%s", "desc": "строка", "example": "sprintf(\"%s\", \"Тим\")" },
+            { "code": "%d", "desc": "целое число", "example": "sprintf(\"%d\", 30)" },
+            { "code": "%f", "desc": "дробное", "example": "sprintf(\"%.2f\", 3.14159) // 3.14" },
+            { "code": "%05d", "desc": "число с ведущими нулями", "example": "sprintf(\"%05d\", 42) // 00042" }
+          ]
+        },
+
+        {
+          "type": "note",
+          "html": "<strong>Главное:</strong> строки — это текст. Склеиваются через <code>.</code>. Для русского — используй <code>mb_*</code> функции. Для поиска — <code>strpos</code> (с <code>=== false</code>!). Для замены — <code>str_replace</code>. Для шаблонов — <code>sprintf</code>.<br><br><strong>Домашка:</strong> возьми строку «Привет, мир!». Выведи её длину. Замени «мир» на «Тим». Разбей на массив по запятой. Склей обратно через « | »."
+        }
+      ]
+    },
+
+    {
+      "id": "lesson8",
+      "title": "Урок 8. Условия и логика",
+      "subtitle": "if, else, switch, тернарник. Как принимать решения в коде.",
+      "blocks": [
+        { "type": "heading", "text": "1. Простой if" },
+        {
+          "type": "symbol-card",
+          "symbol": "if",
+          "meaning": "Если условие истинно — выполни код",
+          "code": "$age = 18;\n\nif ($age >= 18) {\n    echo \"Совершеннолетний\";\n}",
+          "human": "Если age больше или равен 18 — покажи текст. Иначе — ничего."
+        },
+        {
+          "type": "table",
+          "title": "Операторы сравнения",
+          "rows": [
+            { "code": "==", "desc": "равно (не строго)", "example": "\"5\" == 5 → true" },
+            { "code": "===", "desc": "равно И того же типа", "example": "\"5\" === 5 → false" },
+            { "code": "!=", "desc": "не равно", "example": "5 != 3 → true" },
+            { "code": "!==", "desc": "строго не равно", "example": "\"5\" !== 5 → true" },
+            { "code": ">", "desc": "больше", "example": "5 > 3 → true" },
+            { "code": "<", "desc": "меньше", "example": "5 < 3 → false" },
+            { "code": ">=", "desc": "больше или равно", "example": "5 >= 5 → true" },
+            { "code": "<=", "desc": "меньше или равно", "example": "5 <= 3 → false" }
+          ]
+        },
+        {
+          "type": "warn",
+          "html": "⚠️ Всегда используй <code>===</code> и <code>!==</code>, а не <code>==</code> и <code>!=</code>. Строгое сравнение безопаснее."
+        },
+
+        { "type": "heading", "text": "2. if / else / elseif" },
+        {
+          "type": "symbol-card",
+          "symbol": "else, elseif",
+          "meaning": "Несколько вариантов",
+          "code": "$score = 75;\n\nif ($score >= 90) {\n    echo \"Отлично\";\n} elseif ($score >= 70) {\n    echo \"Хорошо\";\n} elseif ($score >= 50) {\n    echo \"Удовлетворительно\";\n} else {\n    echo \"Плохо\";\n}\n// Выведет: Хорошо",
+          "human": "Проверяет сверху вниз. Как только условие сработало — выполняет и выходит. Если ничего не сработало — else."
+        },
+
+        { "type": "heading", "text": "3. Логические операторы" },
+        {
+          "type": "grid-2",
+          "cards": [
+            { "type": "symbol-card", "symbol": "&&", "meaning": "И — оба должны быть true", "code": "if ($age >= 18 && $hasPassport) {\n    echo \"Можно лететь\";\n}" },
+            { "type": "symbol-card", "symbol": "||", "meaning": "Или — хотя бы одно true", "code": "if ($isAdmin || $isModerator) {\n    echo \"Есть доступ\";\n}" },
+            { "type": "symbol-card", "symbol": "!", "meaning": "НЕ — переворачивает", "code": "if (!$isBanned) {\n    echo \"Можно писать\";\n}" },
+            { "type": "symbol-card", "symbol": "and, or", "meaning": "То же самое, но другой приоритет", "code": "if ($a and $b) { ... }" }
+          ]
+        },
+        {
+          "type": "warn",
+          "html": "⚠️ <code>&&</code> и <code>and</code> — не одно и то же. У <code>and</code> приоритет ниже, чем у <code>=</code>. Это источник багов. Используй <code>&&</code> и <code>||</code>."
+        },
+
+        { "type": "heading", "text": "4. Тернарный оператор" },
+        {
+          "type": "symbol-card",
+          "symbol": "? :",
+          "meaning": "Короткая запись if/else",
+          "code": "// Обычный if/else\nif ($age >= 18) {\n    $status = \"взрослый\";\n} else {\n    $status = \"ребёнок\";\n}\n\n// Тернарник — то же самое\n$status = $age >= 18 ? \"взрослый\" : \"ребёнок\";",
+          "human": "Читается: «если age >= 18 — \"взрослый\", иначе — \"ребёнок\"». Условие ? если_да : если_нет."
+        },
+        {
+          "type": "symbol-card",
+          "symbol": "??",
+          "meaning": "Null coalescing — «если null, то вот это»",
+          "code": "$name = $_GET['name'] ?? 'гость';\n// если $_GET['name'] не существует или null — будет 'гость'",
+          "human": "Удобно для значений по умолчанию. Не нужен <code>isset()</code>."
+        },
+        {
+          "type": "symbol-card",
+          "symbol": "?:",
+          "meaning": "Элвис — короткий тернарник",
+          "code": "$name = $_GET['name'] ?: 'гость';\n// если пусто — 'гость'",
+          "human": "Похоже на ??, но проверяет не только null, но и пустые значения."
+        },
+
+        { "type": "heading", "text": "5. switch" },
+        {
+          "type": "symbol-card",
+          "symbol": "switch",
+          "meaning": "Много вариантов одного значения",
+          "code": "$day = \"среда\";\n\nswitch ($day) {\n    case \"понедельник\":\n        echo \"Начало недели\";\n        break;\n    case \"среда\":\n        echo \"Середина недели\";\n        break;\n    case \"пятница\":\n        echo \"Скоро выходные\";\n        break;\n    default:\n        echo \"Обычный день\";\n}",
+          "human": "Сравнивает $day с каждым case. Как совпало — выполняет. <code>break</code> — выйти из switch. <code>default</code> — если ничего не совпало."
+        },
+        {
+          "type": "warn",
+          "html": "⚠️ Забыл <code>break</code> — выполнится и следующий case. Это иногда полезно, но чаще — баг."
+        },
+
+        { "type": "heading", "text": "6. match (PHP 8+)" },
+        {
+          "type": "symbol-card",
+          "symbol": "match",
+          "meaning": "Современный switch",
+          "code": "$result = match($day) {\n    \"понедельник\" => \"Начало недели\",\n    \"среда\" => \"Середина недели\",\n    \"пятница\" => \"Скоро выходные\",\n    default => \"Обычный день\"\n};\n\necho $result;",
+          "human": "Как switch, но короче. Строгое сравнение (===). Возвращает значение. Не нужен break."
+        },
+
+        {
+          "type": "note",
+          "html": "<strong>Главное:</strong> <code>if</code> — для одного-двух условий. <code>switch/match</code> — для многих. Тернарник — для простых «да/нет». Всегда используй <code>===</code>. <code>??</code> — для значений по умолчанию.<br><br><strong>Домашка:</strong> напиши функцию <code>getGrade($score)</code>, которая возвращает оценку (A/B/C/D/F) по числу от 0 до 100. Используй <code>if/elseif</code>. Потом перепиши через <code>match</code>."
+        }
+      ]
+    },
+
+    {
+      "id": "lesson9",
+      "title": "Урок 9. Циклы",
+      "subtitle": "for, foreach, while, do-while. Как повторять код.",
+      "blocks": [
+        { "type": "heading", "text": "1. Зачем циклы" },
+        {
+          "type": "symbol-card",
+          "symbol": "Цикл",
+          "meaning": "Повторяет код много раз",
+          "text": "Вместо 100 одинаковых строк — одна строка в цикле.",
+          "code": "// Без цикла\necho 1;\necho 2;\necho 3;\n// ... и так 100 раз\n\n// С циклом\nfor ($i = 1; $i <= 100; $i++) {\n    echo $i;\n}",
+          "human": "Цикл говорит: «повтори это 100 раз, каждый раз меняя i»."
+        },
+
+        { "type": "heading", "text": "2. for — цикл со счётчиком" },
+        {
+          "type": "symbol-card",
+          "symbol": "for",
+          "meaning": "Когда знаешь, сколько раз повторять",
+          "code": "for ($i = 0; $i < 5; $i++) {\n    echo $i . \" \";\n}\n// Выведет: 0 1 2 3 4",
+          "human": "for (начало; условие; шаг). Начни с 0. Пока меньше 5 — делай. Каждый раз увеличивай на 1."
+        },
+        {
+          "type": "table",
+          "title": "Разбор for",
+          "rows": [
+            { "code": "$i = 0", "desc": "начало — с чего начинаем" },
+            { "code": "$i < 5", "desc": "условие — пока истинно, цикл идёт" },
+            { "code": "$i++", "desc": "шаг — что делаем после каждой итерации" }
+          ]
+        },
+
+        { "type": "heading", "text": "3. foreach — цикл по массиву" },
+        {
+          "type": "symbol-card",
+          "symbol": "foreach",
+          "meaning": "Пройти по всем элементам массива",
+          "code": "$fruits = [\"яблоко\", \"банан\", \"груша\"];\n\nforeach ($fruits as $fruit) {\n    echo $fruit . \"\\n\";\n}\n// яблоко\n// банан\n// груша",
+          "human": "«Для каждого элемента в $fruits, называй его $fruit — и делай что-то»."
+        },
+        {
+          "type": "symbol-card",
+          "symbol": "as $k => $v",
+          "meaning": "С ключами",
+          "code": "$user = [\n    'name' => 'Тим',\n    'age' => 30\n];\n\nforeach ($user as $key => $value) {\n    echo \"$key: $value\\n\";\n}\n// name: Тим\n// age: 30",
+          "human": "Если нужны и ключи, и значения — добавь <code>$k =></code>."
+        },
+
+        { "type": "heading", "text": "4. while — цикл с условием" },
+        {
+          "type": "symbol-card",
+          "symbol": "while",
+          "meaning": "Пока условие истинно — повторяй",
+          "code": "$i = 0;\nwhile ($i < 5) {\n    echo $i . \" \";\n    $i++;  // ВАЖНО: не забудь увеличить\n}\n// 0 1 2 3 4",
+          "human": "«Пока i меньше 5 — делай код». Если забыть $i++ — цикл будет вечным."
+        },
+        {
+          "type": "warn",
+          "html": "⚠️ Забыл изменить условие внутри — <strong>бесконечный цикл</strong>. Браузер/сервер зависнет. Всегда проверяй, что переменная условия меняется."
+        },
+
+        { "type": "heading", "text": "5. do-while — сначала сделай, потом проверь" },
+        {
+          "type": "symbol-card",
+          "symbol": "do-while",
+          "meaning": "Тело выполнится хотя бы раз",
+          "code": "$i = 10;\n\ndo {\n    echo $i;\n    $i++;\n} while ($i < 5);\n\n// Выведет: 10 (один раз, потом условие false)",
+          "human": "В отличие от while — сначала выполняет тело, потом проверяет. Поэтому хотя бы раз выполнится."
+        },
+
+        { "type": "heading", "text": "6. break и continue" },
+        {
+          "type": "grid-2",
+          "cards": [
+            {
+              "type": "symbol-card",
+              "symbol": "break",
+              "meaning": "Выйти из цикла немедленно",
+              "code": "for ($i = 0; $i < 10; $i++) {\n    if ($i == 5) break;\n    echo $i . \" \";\n}\n// 0 1 2 3 4 (на 5 вышли)"
+            },
+            {
+              "type": "symbol-card",
+              "symbol": "continue",
+              "meaning": "Пропустить итерацию",
+              "code": "for ($i = 0; $i < 5; $i++) {\n    if ($i == 2) continue;\n    echo $i . \" \";\n}\n// 0 1 3 4 (двойку пропустили)"
+            }
+          ]
+        },
+
+        { "type": "heading", "text": "7. Вложенные циклы" },
+        {
+          "type": "symbol-card",
+          "symbol": "Цикл в цикле",
+          "meaning": "Осторожно — количество итераций умножается",
+          "code": "for ($i = 1; $i <= 3; $i++) {\n    for ($j = 1; $j <= 3; $j++) {\n        echo \"$i-$j \";\n    }\n    echo \"\\n\";\n}\n// 1-1 1-2 1-3\n// 2-1 2-2 2-3\n// 3-1 3-2 3-3",
+          "human": "Внешний цикл — 3 раза. Внутренний — 3 раза на каждый. Итого 9 итераций."
+        },
+
+        { "type": "heading", "text": "8. Что выбрать" },
+        {
+          "type": "table",
+          "title": "Когда какой цикл",
+          "rows": [
+            { "code": "for", "desc": "знаешь количество итераций", "example": "вывести 10 чисел" },
+            { "code": "foreach", "desc": "перебрать массив", "example": "пройти по списку пользователей" },
+            { "code": "while", "desc": "пока условие истинно", "example": "читать файл построчно" },
+            { "code": "do-while", "desc": "хотя бы раз, потом проверять", "example": "запрос к API с повтором" }
+          ]
+        },
+
+        {
+          "type": "note",
+          "html": "<strong>Главное:</strong> <code>for</code> — когда знаешь число итераций. <code>foreach</code> — для массивов. <code>while</code> — пока условие. <code>break</code> — выйти, <code>continue</code> — пропустить. Следи за бесконечными циклами.<br><br><strong>Домашка:</strong> выведи таблицу умножения от 1 до 5 через вложенные циклы. Потом — массив из 10 чисел, выведи только чётные через <code>foreach + continue</code>."
+        }
+      ]
+    },
+    
+    {
+      "id": "lesson10",
+      "title": "Урок 10. ООП — основы",
+      "subtitle": "Классы, объекты, свойства, методы. Первый шаг в современный PHP.",
+      "blocks": [
+        { "type": "heading", "text": "1. Зачем ООП" },
+        {
+          "type": "symbol-card",
+          "symbol": "Проблема",
+          "meaning": "Много функций и переменных — каша",
+          "text": "Когда проект растёт, функции и данные разбросаны. ООП собирает их вместе.",
+          "code": "// Без ООП — всё в куче\n$user_name = \"Тим\";\n$user_age = 30;\n\nfunction user_greet($name) { ... }\nfunction user_save($name, $age) { ... }\n\n// С ООП — всё в одном классе\n$user = new User(\"Тим\", 30);\n$user->greet();\n$user->save();",
+          "human": "Класс — это чертёж. Объект — конкретная вещь по чертежу. У объекта есть свойства (данные) и методы (действия)."
+        },
+        { "type": "heading", "text": "2. Простой класс" },
+        {
+          "type": "symbol-card",
+          "symbol": "class",
+          "meaning": "Шаблон для создания объектов",
+          "code": "class User {\n    public $name;\n    public $age;\n\n    public function greet() {\n        return \"Привет, я $this->name\";\n    }\n}\n\n// Создаём объект\n$user = new User();\n$user->name = \"Тим\";\n$user->age = 30;\n\necho $user->greet(); // Привет, я Тим",
+          "human": "Класс User описывает: у пользователя есть имя, возраст, и он умеет здороваться. new User() создаёт конкретного пользователя."
+        },
+        { "type": "heading", "text": "3. Свойства и методы" },
+        {
+          "type": "grid-2",
+          "cards": [
+            { "type": "symbol-card", "symbol": "$name", "meaning": "Свойство — данные объекта", "code": "class User {\n    public $name;\n    public $age;\n}" },
+            { "type": "symbol-card", "symbol": "function greet()", "meaning": "Метод — действие объекта", "code": "class User {\n    public function greet() {\n        return \"Привет\";\n    }\n}" }
+          ]
+        },
+        { "type": "heading", "text": "4. $this — ссылка на объект" },
+        {
+          "type": "symbol-card",
+          "symbol": "$this",
+          "meaning": "«Этот конкретный объект»",
+          "code": "class User {\n    public $name;\n\n    public function greet() {\n        return \"Привет, я \" . $this->name;\n        //                       ^^^^^ это свойство этого объекта\n    }\n}\n\n$a = new User();\n$a->name = \"Тим\";\n\n$b = new User();\n$b->name = \"Аня\";\n\necho $a->greet(); // Привет, я Тим\necho $b->greet(); // Привет, я Аня",
+          "human": "Внутри метода $this — это тот объект, у которого вызвали метод. У $a — Тим, у $b — Аня."
+        },
+        { "type": "heading", "text": "5. Конструктор" },
+        {
+          "type": "symbol-card",
+          "symbol": "__construct",
+          "meaning": "Выполняется при создании объекта",
+          "code": "class User {\n    public $name;\n    public $age;\n\n    public function __construct($name, $age) {\n        $this->name = $name;\n        $this->age = $age;\n    }\n}\n\n$user = new User(\"Тим\", 30);\necho $user->name; // Тим",
+          "human": "Конструктор — что делать при рождении объекта. Обычно — сохранить переданные значения в свойства."
+        },
+        {
+          "type": "warn",
+          "html": "⚡ <strong>Современный синтаксис (PHP 8+):</strong> можно короче — <code>public function __construct(public string $name, public int $age) {}</code>. Свойства создаются автоматически."
+        },
+        { "type": "heading", "text": "6. Видимость: public, private, protected" },
+        {
+          "type": "table",
+          "title": "Кто может обращаться",
+          "rows": [
+            { "code": "public", "desc": "все — из любого места", "example": "$user->name = \"Тим\";" },
+            { "code": "private", "desc": "только внутри класса", "example": "извне не доступно" },
+            { "code": "protected", "desc": "класс + наследники", "example": "для extends" }
+          ]
+        },
+        {
+          "type": "symbol-card",
+          "symbol": "private",
+          "meaning": "Скрыть от внешнего мира",
+          "code": "class User {\n    private $password;\n\n    public function setPassword($pwd) {\n        $this->password = password_hash($pwd, PASSWORD_DEFAULT);\n    }\n}\n\n$user = new User();\n$user->setPassword(\"secret\");\n\n// $user->password — ОШИБКА, private не доступно снаружи",
+          "human": "Пароль нельзя читать снаружи. Только через метод. Это защита."
+        },
+        { "type": "heading", "text": "7. Геттеры и сеттеры" },
+        {
+          "type": "symbol-card",
+          "symbol": "getName / setName",
+          "meaning": "Контролируемый доступ к свойствам",
+          "code": "class User {\n    private $name;\n\n    public function getName(): string {\n        return $this->name;\n    }\n\n    public function setName(string $name): void {\n        if (empty($name)) {\n            throw new Exception(\"Имя не может быть пустым\");\n        }\n        $this->name = $name;\n    }\n}\n\n$user = new User();\n$user->setName(\"Тим\");\necho $user->getName(); // Тим",
+          "human": "Свойство private, а доступ — через методы. Так можно проверять данные перед сохранением."
+        },
+        { "type": "heading", "text": "8. Наследование (extends)" },
+        {
+          "type": "symbol-card",
+          "symbol": "extends",
+          "meaning": "Один класс — разновидность другого",
+          "code": "class Animal {\n    public function eat() {\n        return \"Ест\";\n    }\n}\n\nclass Dog extends Animal {\n    public function bark() {\n        return \"Гав\";\n    }\n}\n\n$dog = new Dog();\necho $dog->eat();   // Ест (унаследовано)\necho $dog->bark();  // Гав (своё)",
+          "human": "Dog — разновидность Animal. Берёт всё от Animal и добавляет своё."
+        },
+        { "type": "heading", "text": "9. Как это выглядит в WP" },
+        {
+          "type": "symbol-card",
+          "symbol": "WP + ООП",
+          "meaning": "Современные плагины пишут на классах",
+          "code": "class My_Plugin {\n    public function __construct() {\n        add_action('init', [$this, 'init']);\n        add_action('admin_menu', [$this, 'add_menu']);\n    }\n\n    public function init() {\n        // инициализация\n    }\n\n    public function add_menu() {\n        // добавить пункт меню\n    }\n}\n\nnew My_Plugin();",
+          "human": "Вместо набора функций — класс, который всё держит вместе. Хуки вешаются на методы класса."
+        },
+        {
+          "type": "note",
+          "html": "<strong>Главное:</strong> класс — чертёж, объект — вещь по чертежу. Свойства — данные, методы — действия. <code>$this</code> — ссылка на объект внутри класса. <code>__construct</code> — при создании. <code>private</code> — скрыть от внешнего мира. <code>extends</code> — наследование.<br><br><strong>Домашка:</strong> создай класс <code>Product</code> со свойствами <code>name</code>, <code>price</code> (private) и методами <code>getName()</code>, <code>getPrice()</code>, <code>setPrice($price)</code>. В сеттере проверяй, что цена больше 0. Создай два товара, выведи их."
+        }
+      ]
+    },
+    
+    {
+      "id": "lesson11",
+      "title": "Урок 11. ООП — продвинутое",
+      "subtitle": "Интерфейсы, абстрактные классы, трейты, магические методы.",
+      "blocks": [
+        { "type": "heading", "text": "1. Интерфейсы (interface)" },
+        {
+          "type": "symbol-card",
+          "symbol": "interface",
+          "meaning": "Контракт: «кто меня реализует — обязан уметь это»",
+          "code": "interface Logger {\n    public function log(string $message): void;\n}\n\nclass FileLogger implements Logger {\n    public function log(string $message): void {\n        file_put_contents('app.log', $message . \"\\n\", FILE_APPEND);\n    }\n}\n\nclass ConsoleLogger implements Logger {\n    public function log(string $message): void {\n        echo $message . \"\\n\";\n    }\n}",
+          "human": "Интерфейс — это список методов без реализации. Класс, который implements — обязан их реализовать."
+        },
+        {
+          "type": "symbol-card",
+          "symbol": "implements",
+          "meaning": "Класс обещает выполнить контракт",
+          "code": "$logger = new FileLogger();\n$logger->log(\"Ошибка\");\n\n// Можно подменить на любой другой Logger\n$logger = new ConsoleLogger();\n$logger->log(\"Ошибка\");",
+          "human": "Можно писать код, который работает с любым Logger — не важно, какой именно."
+        },
+        { "type": "heading", "text": "2. Абстрактные классы" },
+        {
+          "type": "symbol-card",
+          "symbol": "abstract",
+          "meaning": "Класс, который нельзя создать напрямую",
+          "code": "abstract class Shape {\n    abstract public function area(): float;\n\n    public function describe(): string {\n        return \"Площадь: \" . $this->area();\n    }\n}\n\nclass Circle extends Shape {\n    public function __construct(private float $radius) {}\n\n    public function area(): float {\n        return 3.14 * $this->radius ** 2;\n    }\n}\n\n$c = new Circle(5);\necho $c->describe(); // Площадь: 78.5",
+          "human": "Абстрактный класс — «заготовка». Нельзя new Shape(). Но можно наследовать и реализовать абстрактные методы."
+        },
+        { "type": "heading", "text": "3. Трейты (trait)" },
+        {
+          "type": "symbol-card",
+          "symbol": "trait",
+          "meaning": "Кусок кода, который можно вставить в класс",
+          "code": "trait Greetable {\n    public function greet(): string {\n        return \"Привет, я \" . $this->name;\n    }\n}\n\nclass User {\n    use Greetable;\n    public $name;\n}\n\n$u = new User();\n$u->name = \"Тим\";\necho $u->greet(); // Привет, я Тим",
+          "human": "Трейт — как «копипаста», но через use. Один трейт можно вставить в много классов."
+        },
+        {
+          "type": "warn",
+          "html": "⚠️ Трейт — не наследование. Если класс <code>extends</code> другой класс и <code>use</code> трейт — оба работают. Трейт — просто «довесок» методов."
+        },
+        { "type": "heading", "text": "4. Магические методы" },
+        {
+          "type": "table",
+          "title": "Методы, которые PHP вызывает сам",
+          "rows": [
+            { "code": "__construct()", "desc": "при создании объекта" },
+            { "code": "__destruct()", "desc": "при удалении объекта" },
+            { "code": "__toString()", "desc": "когда объект превращают в строку" },
+            { "code": "__get($name)", "desc": "при чтении несуществующего свойства" },
+            { "code": "__set($name, $v)", "desc": "при записи в несуществующее свойство" },
+            { "code": "__call($name, $args)", "desc": "при вызове несуществующего метода" },
+            { "code": "__invoke()", "desc": "когда объект вызывают как функцию" }
+          ]
+        },
+        {
+          "type": "symbol-card",
+          "symbol": "__toString",
+          "meaning": "Объект как строка",
+          "code": "class User {\n    public function __construct(private string $name) {}\n\n    public function __toString(): string {\n        return $this->name;\n    }\n}\n\n$u = new User(\"Тим\");\necho $u; // Тим (без __toString — ошибка)",
+          "human": "Без __toString PHP не знает, как превратить объект в строку. С ним — знает."
+        },
+        { "type": "heading", "text": "5. Статические методы" },
+        {
+          "type": "symbol-card",
+          "symbol": "static",
+          "meaning": "Метод класса, а не объекта",
+          "code": "class Math {\n    public static function double(int $x): int {\n        return $x * 2;\n    }\n}\n\n// Не нужно new Math()\necho Math::double(5); // 10",
+          "human": "Статические методы вызывают через :: у класса, без создания объекта."
+        },
+        { "type": "heading", "text": "6. Константы класса" },
+        {
+          "type": "symbol-card",
+          "symbol": "const",
+          "meaning": "Значение, привязанное к классу",
+          "code": "class Status {\n    const ACTIVE = 1;\n    const BANNED = 2;\n    const DELETED = 3;\n}\n\necho Status::ACTIVE; // 1",
+          "human": "Константы класса — как define, но внутри класса. Обращение через ::."
+        },
+        {
+          "type": "note",
+          "html": "<strong>Главное:</strong> <code>interface</code> — контракт. <code>abstract</code> — заготовка, нельзя создать объект. <code>trait</code> — довесок методов. <code>static</code> — метод класса, не объекта. <code>const</code> — константа внутри класса.<br><br><strong>Домашка:</strong> сделай интерфейс <code>Shape</code> с методом <code>area()</code>. Классы <code>Circle</code>, <code>Square</code>, <code>Triangle</code> реализуют его. Пробегись по массиву фигур и выведи площадь каждой."
+        }
+      ]
+    },
+    
+    {
+      "id": "lesson12",
+      "title": "Урок 12. Работа с БД (PDO)",
+      "subtitle": "Подключение к MySQL, запросы, подготовленные выражения, защита от SQL-инъекций.",
+      "blocks": [
+        { "type": "heading", "text": "1. Что такое PDO" },
+        {
+          "type": "symbol-card",
+          "symbol": "PDO",
+          "meaning": "PHP Data Objects — универсальный способ работать с БД",
+          "text": "Один API для MySQL, PostgreSQL, SQLite и других. Не надо учить mysqli отдельно.",
+          "code": "$pdo = new PDO(\n    'mysql:host=localhost;dbname=test;charset=utf8mb4',\n    'root',\n    'password'\n);",
+          "human": "Подключаюсь к MySQL. Первый аргумент — DSN (строка подключения), потом логин и пароль."
+        },
+        {
+          "type": "warn",
+          "html": "⚠️ Никогда не храни логин и пароль в коде. Используй <code>.env</code> файл и <code>getenv()</code> или библиотеку <code>vlucas/phpdotenv</code>."
+        },
+        { "type": "heading", "text": "2. Режим ошибок" },
+        {
+          "type": "symbol-card",
+          "symbol": "ERRMODE_EXCEPTION",
+          "meaning": "PDO должен бросать исключения при ошибках",
+          "code": "$pdo = new PDO($dsn, $user, $pass, [\n    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,\n    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,\n]);",
+          "human": "Без этого PDO молчит при ошибках. С этим — бросает исключение, которое можно поймать в try/catch."
+        },
+        { "type": "heading", "text": "3. SELECT — чтение" },
+        {
+          "type": "symbol-card",
+          "symbol": "query + fetch",
+          "meaning": "Простой запрос без параметров",
+          "code": "$stmt = $pdo->query(\"SELECT * FROM users\");\n\n// Одна строка\n$user = $stmt->fetch();\n\n// Все строки\n$users = $stmt->fetchAll();\n\nforeach ($users as $u) {\n    echo $u['name'] . \"\\n\";\n}",
+          "human": "query — выполни. fetch — возьми одну строку. fetchAll — все строки массивом."
+        },
+        { "type": "heading", "text": "4. Подготовленные выражения (главное!)" },
+        {
+          "type": "symbol-card",
+          "symbol": "prepare + execute",
+          "meaning": "Запрос с параметрами — защита от SQL-инъекций",
+          "code": "// ПЛОХО — SQL-инъекция!\n$sql = \"SELECT * FROM users WHERE name = '\" . $_GET['name'] . \"'\";\n\n// ХОРОШО — подготовленное выражение\n$sql = \"SELECT * FROM users WHERE name = :name\";\n$stmt = $pdo->prepare($sql);\n$stmt->execute(['name' => $_GET['name']]);\n$user = $stmt->fetch();",
+          "human": ":name — плейсхолдер. PDO сам подставит значение, экранирует и защитит от инъекций."
+        },
+        {
+          "type": "warn",
+          "html": "⚠️ <strong>Правило номер один:</strong> никогда не вставляй переменные в SQL напрямую через точку. Всегда используй <code>prepare</code> + <code>execute</code>."
+        },
+        { "type": "heading", "text": "5. INSERT, UPDATE, DELETE" },
+        {
+          "type": "symbol-card",
+          "symbol": "execute",
+          "meaning": "Запросы, которые меняют данные",
+          "code": "// INSERT\n$stmt = $pdo->prepare(\"INSERT INTO users (name, email) VALUES (:name, :email)\");\n$stmt->execute(['name' => 'Тим', 'email' => 'tim@mail.ru']);\n\n$id = $pdo->lastInsertId(); // ID новой записи\n\n// UPDATE\n$stmt = $pdo->prepare(\"UPDATE users SET name = :name WHERE id = :id\");\n$stmt->execute(['name' => 'Тимофей', 'id' => 5]);\n\n// DELETE\n$stmt = $pdo->prepare(\"DELETE FROM users WHERE id = :id\");\n$stmt->execute(['id' => 5]);",
+          "human": "prepare — подготовь шаблон. execute — выполни с конкретными значениями. lastInsertId — ID последней вставки."
+        },
+        { "type": "heading", "text": "6. Транзакции" },
+        {
+          "type": "symbol-card",
+          "symbol": "beginTransaction",
+          "meaning": "Несколько запросов — или все, или ни один",
+          "code": "try {\n    $pdo->beginTransaction();\n\n    $pdo->exec(\"UPDATE accounts SET balance = balance - 100 WHERE id = 1\");\n    $pdo->exec(\"UPDATE accounts SET balance = balance + 100 WHERE id = 2\");\n\n    $pdo->commit();\n} catch (Exception $e) {\n    $pdo->rollBack();\n    throw $e;\n}",
+          "human": "Транзакция — «либо всё, либо ничего». Если посередине ошибка — все изменения откатываются через rollBack."
+        },
+        { "type": "heading", "text": "7. Обработка ошибок" },
+        {
+          "type": "symbol-card",
+          "symbol": "try / catch",
+          "meaning": "Ловить ошибки БД",
+          "code": "try {\n    $stmt = $pdo->prepare(\"SELECT * FROM users WHERE id = :id\");\n    $stmt->execute(['id' => 5]);\n    $user = $stmt->fetch();\n} catch (PDOException $e) {\n    error_log($e->getMessage());\n    echo \"Ошибка базы данных\";\n}",
+          "human": "PDOException — исключение PDO. Ловим, логируем, показываем пользователю нейтральное сообщение."
+        },
+        {
+          "type": "note",
+          "html": "<strong>Главное:</strong> PDO — универсальный способ работать с БД. Всегда <code>prepare + execute</code>, никогда — конкатенация. Включай <code>ERRMODE_EXCEPTION</code>. Для нескольких связанных запросов — транзакции.<br><br><strong>Домашка:</strong> создай таблицу <code>tasks</code> (id, title, done). Напиши функции <code>addTask($title)</code>, <code>getAllTasks()</code>, <code>toggleTask($id)</code>. Используй PDO и подготовленные выражения."
+        }
+      ]
+    },
+    
+    {
+      "id": "lesson13",
+      "title": "Урок 13. Формы и валидация",
+      "subtitle": "GET и POST, обработка данных, проверка, защита от XSS и CSRF.",
+      "blocks": [
+        { "type": "heading", "text": "1. GET vs POST" },
+        {
+          "type": "table",
+          "title": "Два способа отправить данные",
+          "rows": [
+            { "code": "GET", "desc": "в URL, видно всем", "example": "site.com?name=Тим&age=30" },
+            { "code": "POST", "desc": "в теле запроса, не видно", "example": "форма входа, регистрации" }
+          ]
+        },
+        {
+          "type": "symbol-card",
+          "symbol": "$_GET, $_POST",
+          "meaning": "Суперглобальные массивы с данными",
+          "code": "// URL: site.com?name=Тим\n$name = $_GET['name']; // \"Тим\"\n\n// Форма отправлена методом POST\n$email = $_POST['email'];",
+          "human": "PHP сам кладёт данные из URL в $_GET, из формы POST — в $_POST."
+        },
+        { "type": "heading", "text": "2. HTML-форма" },
+        {
+          "type": "symbol-card",
+          "symbol": "<form>",
+          "meaning": "Форма отправки данных",
+          "code": "<form method=\"POST\" action=\"/register.php\">\n    <input type=\"text\" name=\"name\" required>\n    <input type=\"email\" name=\"email\" required>\n    <input type=\"password\" name=\"password\" required>\n    <button type=\"submit\">Зарегистрироваться</button>\n</form>",
+          "human": "Атрибут name — ключ в $_POST. action — куда отправить. method — GET или POST."
+        },
+        { "type": "heading", "text": "3. Обработка на сервере" },
+        {
+          "type": "symbol-card",
+          "symbol": "isset + empty",
+          "meaning": "Проверить, что данные пришли",
+          "code": "if ($_SERVER['REQUEST_METHOD'] === 'POST') {\n    $name = $_POST['name'] ?? '';\n    $email = $_POST['email'] ?? '';\n\n    if (empty($name)) {\n        $errors[] = \"Имя обязательно\";\n    }\n    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {\n        $errors[] = \"Email некорректный\";\n    }\n}",
+          "human": "Проверяем метод, берём данные через ?? '', валидируем каждое поле, собираем ошибки."
+        },
+        { "type": "heading", "text": "4. Валидация" },
+        {
+          "type": "symbol-card",
+          "symbol": "filter_var",
+          "meaning": "Встроенные валидаторы",
+          "code": "// Email\nfilter_var($email, FILTER_VALIDATE_EMAIL);\n\n// URL\nfilter_var($url, FILTER_VALIDATE_URL);\n\n// Число\nfilter_var($age, FILTER_VALIDATE_INT);\n\n// IP\nfilter_var($ip, FILTER_VALIDATE_IP);",
+          "human": "filter_var возвращает значение или false. Так проверяют email, URL, числа."
+        },
+        {
+          "type": "symbol-card",
+          "symbol": "Ручная проверка",
+          "meaning": "Когда встроенных не хватает",
+          "code": "$errors = [];\n\nif (strlen($name) < 2) {\n    $errors[] = \"Имя слишком короткое\";\n}\nif (strlen($password) < 8) {\n    $errors[] = \"Пароль минимум 8 символов\";\n}\nif ($password !== $passwordConfirm) {\n    $errors[] = \"Пароли не совпадают\";\n}",
+          "human": "Свои правила: длина, совпадение, формат. Собираем все ошибки в массив."
+        },
+        { "type": "heading", "text": "5. XSS — защита при выводе" },
+        {
+          "type": "symbol-card",
+          "symbol": "htmlspecialchars",
+          "meaning": "Превратить HTML-теги в безопасный текст",
+          "code": "// ПЛОХО — пользователь вставит <script>alert('xss')</script>\necho $_GET['name'];\n\n// ХОРОШО\necho htmlspecialchars($_GET['name'], ENT_QUOTES, 'UTF-8');",
+          "human": "htmlspecialchars заменяет < > & \" ' на безопасные сущности. Скрипт не выполнится."
+        },
+        {
+          "type": "warn",
+          "html": "⚠️ <strong>Правило:</strong> экранируй <code>htmlspecialchars</code> <strong>при выводе</strong>, а не при сохранении. Иначе в БД будет мусор."
+        },
+        { "type": "heading", "text": "6. CSRF — защита форм" },
+        {
+          "type": "symbol-card",
+          "symbol": "CSRF-токен",
+          "meaning": "Одноразовый ключ в форме",
+          "code": "// При показе формы\nsession_start();\n$token = bin2hex(random_bytes(32));\n$_SESSION['csrf'] = $token;\n\n// В HTML\n// <input type=\"hidden\" name=\"csrf\" value=\"<?= $token ?>\">\n\n// При обработке\nif ($_POST['csrf'] !== $_SESSION['csrf']) {\n    die(\"CSRF-атака\");\n}",
+          "human": "Токен кладётся в сессию и в форму. При отправке сравниваются. Если не совпали — форма поддельная."
+        },
+        { "type": "heading", "text": "7. Пароли" },
+        {
+          "type": "symbol-card",
+          "symbol": "password_hash",
+          "meaning": "Хеширование пароля",
+          "code": "// При регистрации\n$hash = password_hash($password, PASSWORD_DEFAULT);\n// сохранить $hash в БД\n\n// При входе\nif (password_verify($password, $hashFromDB)) {\n    // пароль верный\n}",
+          "human": "Никогда не храни пароль в открытом виде. password_hash создаёт необратимый хеш. password_verify проверяет."
+        },
+        {
+          "type": "note",
+          "html": "<strong>Главное:</strong> GET — в URL, POST — в теле. Всегда проверяй данные через <code>filter_var</code> и свои правила. При выводе — <code>htmlspecialchars</code>. Формы — с CSRF-токеном. Пароли — только <code>password_hash</code>.<br><br><strong>Домашка:</strong> сделай форму регистрации (имя, email, пароль). Проверь все поля. Если ошибки — покажи их. Если всё ок — выведи «Успех»."
+        }
+      ]
+    },
+    
+    {
+      "id": "lesson14",
+      "title": "Урок 14. Сессии и куки",
+      "subtitle": "Как помнить пользователя между запросами. Авторизация, корзина, настройки.",
+      "blocks": [
+        { "type": "heading", "text": "1. Проблема: HTTP не помнит" },
+        {
+          "type": "symbol-card",
+          "symbol": "HTTP stateless",
+          "meaning": "Каждый запрос — независимый",
+          "text": "Сервер не знает, что ты уже залогинился. Каждый запрос — как первый. Сессии решают это.",
+          "code": "// Запрос 1: пользователь залогинился\n// Запрос 2: сервер уже не помнит его",
+          "human": "Сессия — «бейджик» пользователя. Сервер выдаёт его при входе, браузер носит с собой."
+        },
+        { "type": "heading", "text": "2. Сессии" },
+        {
+          "type": "symbol-card",
+          "symbol": "session_start()",
+          "meaning": "Начать или продолжить сессию",
+          "code": "// Начало — на каждой странице\nsession_start();\n\n// Записать\n$_SESSION['user_id'] = 5;\n$_SESSION['name'] = 'Тим';\n\n// Прочитать\necho $_SESSION['name']; // Тим\n\n// Удалить одно значение\nunset($_SESSION['name']);\n\n// Полностью выйти\nsession_destroy();",
+          "human": "session_start() должен быть в самом начале скрипта, до любого вывода. Дальше $_SESSION работает как массив."
+        },
+        {
+          "type": "warn",
+          "html": "⚠️ <code>session_start()</code> до любого HTML. Если вывел хоть пробел до него — будет ошибка «headers already sent»."
+        },
+        { "type": "heading", "text": "3. Куки" },
+        {
+          "type": "symbol-card",
+          "symbol": "setcookie",
+          "meaning": "Данные в браузере пользователя",
+          "code": "// Установить куку на 30 дней\nsetcookie('theme', 'dark', [\n    'expires' => time() + 60*60*24*30,\n    'path' => '/',\n    'httponly' => true,  // JS не видит\n    'samesite' => 'Lax'  // защита от CSRF\n]);\n\n// Прочитать\necho $_COOKIE['theme']; // dark\n\n// Удалить\nsetcookie('theme', '', time() - 3600);",
+          "human": "Кука хранится в браузере. Устанавливается через setcookie. Читается через $_COOKIE. httponly — JS не видит, безопаснее."
+        },
+        { "type": "heading", "text": "4. Сессия vs кука" },
+        {
+          "type": "table",
+          "title": "Что выбрать",
+          "rows": [
+            { "code": "Сессия", "desc": "данные на сервере, ID в куке", "example": "логин, корзина" },
+            { "code": "Кука", "desc": "данные в браузере", "example": "тема, язык" }
+          ]
+        },
+        {
+          "type": "symbol-card",
+          "symbol": "Правило",
+          "meaning": "Что где хранить",
+          "code": "// В сессии — важное и приватное\n$_SESSION['user_id'] = 5;\n$_SESSION['is_admin'] = true;\n\n// В куке — настройки\nsetcookie('theme', 'dark');\nsetcookie('lang', 'ru');",
+          "human": "Сессия — для авторизации и корзины. Кука — для темы и языка интерфейса."
+        },
+        { "type": "heading", "text": "5. Авторизация — пример" },
+        {
+          "type": "symbol-card",
+          "symbol": "Логин",
+          "meaning": "Классическая схема",
+          "code": "session_start();\n\n// При успешном входе\nif (password_verify($password, $hashFromDB)) {\n    $_SESSION['user_id'] = $user['id'];\n    $_SESSION['name'] = $user['name'];\n    header('Location: /dashboard.php');\n    exit;\n}\n\n// Проверка на закрытых страницах\nif (!isset($_SESSION['user_id'])) {\n    header('Location: /login.php');\n    exit;\n}",
+          "human": "После входа кладём user_id в сессию. На закрытых страницах проверяем, есть ли он."
+        },
+        { "type": "heading", "text": "6. Безопасность сессий" },
+        {
+          "type": "symbol-card",
+          "symbol": "session_regenerate_id",
+          "meaning": "Сменить ID сессии после входа",
+          "code": "session_start();\n\nif ($loginSuccess) {\n    session_regenerate_id(true);  // новый ID\n    $_SESSION['user_id'] = $user['id'];\n}",
+          "human": "Защита от session fixation — атакующий не сможет использовать старый ID."
+        },
+        {
+          "type": "symbol-card",
+          "symbol": "Таймаут",
+          "meaning": "Автоматический выход",
+          "code": "session_start();\n\n$timeout = 60 * 30; // 30 минут\n\nif (isset($_SESSION['last_activity']) &&\n    (time() - $_SESSION['last_activity']) > $timeout) {\n    session_unset();\n    session_destroy();\n    header('Location: /login.php');\n    exit;\n}\n\n$_SESSION['last_activity'] = time();",
+          "human": "Если пользователь неактивен 30 минут — выкидываем его."
+        },
+        {
+          "type": "note",
+          "html": "<strong>Главное:</strong> <code>session_start()</code> — в начале каждого скрипта. Сессия — для важного, кука — для настроек. После логина — <code>session_regenerate_id()</code>. Настрой таймаут.<br><br><strong>Домашка:</strong> сделай страницу логина и страницу «профиль». Профиль доступен только если в сессии есть <code>user_id</code>. Добавь кнопку «Выйти», которая очищает сессию."
+        }
+      ]
+    },
+    
+    {
+      "id": "lesson15",
+      "title": "Урок 15. Файлы и загрузка",
+      "subtitle": "Чтение, запись, загрузка файлов пользователем. Безопасность.",
+      "blocks": [
+        { "type": "heading", "text": "1. Чтение файла" },
+        {
+          "type": "symbol-card",
+          "symbol": "file_get_contents",
+          "meaning": "Прочитать весь файл в строку",
+          "code": "$content = file_get_contents('data.txt');\necho $content;\n\n// С проверкой\nif (file_exists('data.txt')) {\n    $content = file_get_contents('data.txt');\n}",
+          "human": "file_get_contents — читает файл целиком и возвращает строку. file_exists — проверяет, есть ли файл."
+        },
+        { "type": "heading", "text": "2. Запись файла" },
+        {
+          "type": "symbol-card",
+          "symbol": "file_put_contents",
+          "meaning": "Записать строку в файл",
+          "code": "// Перезаписать\nfile_put_contents('log.txt', \"Новая строка\\n\");\n\n// Дописать в конец\nfile_put_contents('log.txt', \"Ещё строка\\n\", FILE_APPEND);",
+          "human": "Без FILE_APPEND — перезапишет. С FILE_APPEND — добавит в конец."
+        },
+        { "type": "heading", "text": "3. Построчное чтение" },
+        {
+          "type": "symbol-card",
+          "symbol": "fopen + fgets",
+          "meaning": "Большие файлы — по строкам",
+          "code": "$handle = fopen('big.txt', 'r');\n\nwhile (($line = fgets($handle)) !== false) {\n    echo $line;\n}\n\nfclose($handle);",
+          "human": "fopen открывает файл. fgets читает одну строку. fclose закрывает. Для больших файлов — не грузим всё в память."
+        },
+        {
+          "type": "table",
+          "title": "Режимы fopen",
+          "rows": [
+            { "code": "r", "desc": "только чтение" },
+            { "code": "w", "desc": "запись, перезапишет" },
+            { "code": "a", "desc": "запись, допишет в конец" },
+            { "code": "r+", "desc": "чтение и запись" }
+          ]
+        },
+        { "type": "heading", "text": "4. Загрузка файлов" },
+        {
+          "type": "symbol-card",
+          "symbol": "<input type=\"file\">",
+          "meaning": "Форма для загрузки",
+          "code": "<form method=\"POST\" enctype=\"multipart/form-data\">\n    <input type=\"file\" name=\"avatar\">\n    <button type=\"submit\">Загрузить</button>\n</form>",
+          "human": "Обязательно enctype=\"multipart/form-data\" — иначе файл не отправится."
+        },
+        {
+          "type": "symbol-card",
+          "symbol": "$_FILES",
+          "meaning": "Информация о загруженном файле",
+          "code": "$file = $_FILES['avatar'];\n\necho $file['name'];     // оригинальное имя\n echo $file['type'];     // MIME-тип\n echo $file['size'];     // размер в байтах\n echo $file['tmp_name']; // временный путь\necho $file['error'];    // код ошибки (0 = ок)",
+          "human": "PHP сам кладёт информацию о файле в $_FILES. tmp_name — где файл лежит временно до обработки."
+        },
+        { "type": "heading", "text": "5. Обработка загрузки" },
+        {
+          "type": "symbol-card",
+          "symbol": "move_uploaded_file",
+          "meaning": "Переместить из временной папки",
+          "code": "$file = $_FILES['avatar'];\n\nif ($file['error'] !== UPLOAD_ERR_OK) {\n    die(\"Ошибка загрузки\");\n}\n\n// Проверки\nif ($file['size'] > 2 * 1024 * 1024) {\n    die(\"Файл больше 2 МБ\");\n}\n\n$allowed = ['image/jpeg', 'image/png'];\nif (!in_array($file['type'], $allowed)) {\n    die(\"Только JPEG и PNG\");\n}\n\n// Перемещаем\n$ext = pathinfo($file['name'], PATHINFO_EXTENSION);\n$newName = uniqid() . '.' . $ext;\nmove_uploaded_file($file['tmp_name'], 'uploads/' . $newName);",
+          "human": "Проверь ошибку, размер, тип. Сгенерируй новое имя. move_uploaded_file переносит из временной папки в целевую."
+        },
+        { "type": "heading", "text": "6. Безопасность" },
+        {
+          "type": "warn",
+          "html": "⚠️ <strong>Никогда</strong> не доверяй <code>$_FILES['name']</code>. Пользователь может загрузить <code>virus.php</code> и выполнить его. Всегда:<br>1. Проверяй MIME через <code>finfo_file()</code>, а не через <code>$_FILES['type']</code> (его можно подделать).<br>2. Генерируй новое имя через <code>uniqid()</code> или <code>random_bytes()</code>.<br>3. Храни файлы <strong>вне</strong> публичной папки или запрети выполнение PHP в папке загрузок."
+        },
+        {
+          "type": "symbol-card",
+          "symbol": "finfo_file",
+          "meaning": "Настоящая проверка типа",
+          "code": "$finfo = finfo_open(FILEINFO_MIME_TYPE);\n$mime = finfo_file($finfo, $file['tmp_name']);\nfinfo_close($finfo);\n\nif (!in_array($mime, ['image/jpeg', 'image/png'])) {\n    die(\"Не картинка\");\n}",
+          "human": "finfo_file смотрит в содержимое файла, а не в расширение. Так не обмануть."
+        },
+        { "type": "heading", "text": "7. Удаление и папки" },
+        {
+          "type": "symbol-card",
+          "symbol": "unlink, mkdir, scandir",
+          "meaning": "Работа с файлами и папками",
+          "code": "unlink('file.txt');           // удалить файл\nmkdir('uploads', 0755);       // создать папку\n$files = scandir('uploads');  // список файлов\nrmdir('empty_folder');        // удалить пустую папку",
+          "human": "unlink — удалить файл. mkdir — создать папку. scandir — список файлов в папке."
+        },
+        {
+          "type": "note",
+          "html": "<strong>Главное:</strong> <code>file_get_contents</code> / <code>file_put_contents</code> — простое чтение и запись. Для больших файлов — <code>fopen</code> + <code>fgets</code>. Загрузка — через <code>$_FILES</code> и <code>move_uploaded_file</code>. Всегда проверяй MIME через <code>finfo_file</code> и генерируй новое имя.<br><br><strong>Домашка:</strong> сделай форму загрузки аватара. Принимай только JPEG/PNG до 2 МБ. Сохраняй с уникальным именем в папку <code>uploads/</code>. Выведи список загруженных файлов."
+        }
+      ]
+    },
+    
+    {
+      "id": "lesson16",
+      "title": "Урок 16. Composer и автозагрузка",
+      "subtitle": "Менеджер пакетов PHP. Как подключать чужие библиотеки и свои классы.",
+      "blocks": [
+        { "type": "heading", "text": "1. Что такое Composer" },
+        {
+          "type": "symbol-card",
+          "symbol": "Composer",
+          "meaning": "Менеджер зависимостей для PHP",
+          "text": "Как npm для JS, pip для Python. Скачивает библиотеки, следит за версиями, автозагружает классы.",
+          "code": "# Установка (Linux/Mac)\ncurl -sS https://getcomposer.org/installer | php\n\n# Или скачай composer.phar с сайта\n\n# Проверка\ncomposer --version",
+          "human": "Composer ставится один раз на компьютер. Дальше используется в каждом проекте."
+        },
+        { "type": "heading", "text": "2. composer.json" },
+        {
+          "type": "symbol-card",
+          "symbol": "composer.json",
+          "meaning": "Файл с описанием проекта и зависимостей",
+          "code": "{\n    \"name\": \"my/plugin\",\n    \"description\": \"Мой плагин\",\n    \"require\": {\n        \"php\": \">=8.1\",\n        \"guzzlehttp/guzzle\": \"^7.0\",\n        \"monolog/monolog\": \"^3.0\"\n    },\n    \"autoload\": {\n        \"psr-4\": {\n            \"MyPlugin\\\\\": \"src/\"\n        }\n    }\n}",
+          "human": "require — что нужно. autoload — где мои классы. psr-4 — стандарт именования."
+        },
+        { "type": "heading", "text": "3. Установка зависимостей" },
+        {
+          "type": "symbol-card",
+          "symbol": "composer install / require",
+          "meaning": "Скачать библиотеки",
+          "code": "# Первый раз — по composer.json\ncomposer install\n\n# Добавить новую библиотеку\ncomposer require guzzlehttp/guzzle\n\n# Обновить всё\ncomposer update\n\n# Удалить\ncomposer remove guzzlehttp/guzzle",
+          "human": "install — по списку из composer.json. require — добавить и сразу скачать. update — обновить до последних версий."
+        },
+        {
+          "type": "warn",
+          "html": "⚠️ Папку <code>vendor/</code> <strong>не коммить в Git</strong>. В <code>.gitignore</code> добавь <code>/vendor/</code>. У каждого разработчика свой <code>composer install</code>."
+        },
+        { "type": "heading", "text": "4. Автозагрузка" },
+        {
+          "type": "symbol-card",
+          "symbol": "require vendor/autoload.php",
+          "meaning": "Подключить автозагрузчик",
+          "code": "<?php\nrequire __DIR__ . '/vendor/autoload.php';\n\n// Дальше можно использовать классы\nuse GuzzleHttp\\Client;\n\n$client = new Client();",
+          "human": "Одна строка — и все библиотеки + твои классы подключаются автоматически. Не надо require для каждого файла."
+        },
+        { "type": "heading", "text": "5. PSR-4 — стандарт именования" },
+        {
+          "type": "symbol-card",
+          "symbol": "Пространство имён = путь",
+          "meaning": "Класс App\\Models\\User лежит в src/Models/User.php",
+          "code": "// composer.json\n\"autoload\": {\n    \"psr-4\": {\n        \"App\\\\\": \"src/\"\n    }\n}\n\n// Файл: src/Models/User.php\nnamespace App\\Models;\n\nclass User { ... }\n\n// Где угодно:\nuse App\\Models\\User;\n$u = new User();",
+          "human": "App\\ соответствует папке src/. App\\Models\\User — файл src/Models/User.php. Так PHP сам находит класс по имени."
+        },
+        { "type": "heading", "text": "6. Популярные библиотеки" },
+        {
+          "type": "table",
+          "title": "Что пригодится",
+          "rows": [
+            { "code": "guzzlehttp/guzzle", "desc": "HTTP-запросы к API" },
+            { "code": "monolog/monolog", "desc": "Логирование" },
+            { "code": "vlucas/phpdotenv", "desc": "Загрузка .env файлов" },
+            { "code": "symfony/var-dumper", "desc": "Красивый dump() вместо var_dump" },
+            { "code": "phpunit/phpunit", "desc": "Тесты" },
+            { "code": "fakerphp/faker", "desc": "Генерация тестовых данных" },
+            { "code": "carbon/carbon", "desc": "Удобная работа с датами" }
+          ]
+        },
+        {
+          "type": "symbol-card",
+          "symbol": "Пример: Guzzle",
+          "meaning": "HTTP-запрос в 5 строк",
+          "code": "use GuzzleHttp\\Client;\n\n$client = new Client();\n$response = $client->get('https://api.example.com/users');\n$users = json_decode($response->getBody(), true);\n\nforeach ($users as $user) {\n    echo $user['name'];\n}",
+          "human": "Guzzle — удобная замена curl. Обрабатывает ошибки, редиректы, JSON."
+        },
+        { "type": "heading", "text": "7. Composer в WordPress" },
+        {
+          "type": "symbol-card",
+          "symbol": "WP + Composer",
+          "meaning": "Современные плагины используют",
+          "code": "// wp-content/plugins/my-plugin/\n// ├── composer.json\n// ├── vendor/\n// └── my-plugin.php\n\n// my-plugin.php\nrequire __DIR__ . '/vendor/autoload.php';\n\nuse MyPlugin\\Core\\Plugin;\n\nnew Plugin();",
+          "human": "Плагин подключает автозагрузчик и создаёт объект Plugin. Дальше всё по ООП."
+        },
+        {
+          "type": "note",
+          "html": "<strong>Главное:</strong> Composer — менеджер зависимостей. <code>composer require</code> — добавить библиотеку. <code>vendor/autoload.php</code> — подключить. PSR-4 — стандарт: namespace = путь. Не коммить <code>vendor/</code>.<br><br><strong>Домашка:</strong> создай папку проекта, инициализируй <code>composer init</code>, подключи <code>guzzlehttp/guzzle</code>. Напиши скрипт, который делает GET-запрос к <code>https://jsonplaceholder.typicode.com/posts/1</code> и выводит заголовок."
+        }
+      ]
+    },
+    
+    {
+      "id": "lesson17",
+      "title": "Урок 17. Обработка ошибок",
+      "subtitle": "try/catch, исключения, свои исключения, логирование.",
+      "blocks": [
+        { "type": "heading", "text": "1. Зачем ошибки" },
+        {
+          "type": "symbol-card",
+          "symbol": "Проблема",
+          "meaning": "Код падает — и всё ломается",
+          "text": "Без обработки ошибок один сбойный запрос рушит всю страницу. Исключения позволяют поймать проблему и красиво обработать.",
+          "code": "// Без обработки — fatal error\n$result = 10 / 0;  // Division by zero\n\n// С обработкой — контролируем\nif ($divisor === 0) {\n    throw new Exception(\"Деление на ноль\");\n}",
+          "human": "Исключение — «сигнал бедствия». Бросается (throw) и ловится (catch)."
+        },
+        { "type": "heading", "text": "2. try / catch / finally" },
+        {
+          "type": "symbol-card",
+          "symbol": "try / catch",
+          "meaning": "Попробовать и поймать",
+          "code": "try {\n    // код, который может упасть\n    $user = findUser(5);\n} catch (Exception $e) {\n    // что делать при ошибке\n    echo \"Ошибка: \" . $e->getMessage();\n}",
+          "human": "try — «попробуй». catch — «если упало, сделай это». $e — объект с информацией об ошибке."
+        },
+        {
+          "type": "symbol-card",
+          "symbol": "finally",
+          "meaning": "Выполнится всегда",
+          "code": "try {\n    $file = fopen('data.txt', 'r');\n    // работа с файлом\n} catch (Exception $e) {\n    echo \"Ошибка: \" . $e->getMessage();\n} finally {\n    fclose($file);  // закроется всегда\n}",
+          "human": "finally — «и неважно, была ошибка или нет». Удобно для закрытия файлов, соединений."
+        },
+        { "type": "heading", "text": "3. throw — бросить исключение" },
+        {
+          "type": "symbol-card",
+          "symbol": "throw",
+          "meaning": "Создать и бросить исключение",
+          "code": "function divide($a, $b) {\n    if ($b === 0) {\n        throw new Exception(\"Деление на ноль\");\n    }\n    return $a / $b;\n}\n\ntry {\n    echo divide(10, 0);\n} catch (Exception $e) {\n    echo $e->getMessage(); // \"Деление на ноль\"\n}",
+          "human": "throw прерывает выполнение и передаёт объект исключения наверх — в ближайший catch."
+        },
+        {
+          "type": "warn",
+          "html": "⚠️ После <code>throw</code> код не выполняется. Всё, что ниже — игнорируется."
+        },
+        { "type": "heading", "text": "4. Методы исключения" },
+        {
+          "type": "table",
+          "title": "Что внутри $e",
+          "rows": [
+            { "code": "$e->getMessage()", "desc": "текст ошибки" },
+            { "code": "$e->getCode()", "desc": "код ошибки" },
+            { "code": "$e->getFile()", "desc": "файл, где ошибка" },
+            { "code": "$e->getLine()", "desc": "строка" },
+            { "code": "$e->getTrace()", "desc": "стек вызовов" },
+            { "code": "$e->getTraceAsString()", "desc": "стек как строка" }
+          ]
+        },
+        { "type": "heading", "text": "5. Свои классы исключений" },
+        {
+          "type": "symbol-card",
+          "symbol": "extends Exception",
+          "meaning": "Своё исключение",
+          "code": "class ValidationException extends Exception {}\nclass NotFoundException extends Exception {}\n\nfunction findUser($id) {\n    if ($id < 1) {\n        throw new ValidationException(\"Некорректный ID\");\n    }\n    if (!userExists($id)) {\n        throw new NotFoundException(\"Пользователь не найден\");\n    }\n}\n\ntry {\n    findUser(0);\n} catch (ValidationException $e) {\n    echo \"Неверные данные: \" . $e->getMessage();\n} catch (NotFoundException $e) {\n    echo \"Не найдено: \" . $e->getMessage();\n}",
+          "human": "Разные исключения — разная обработка. catch ловит конкретный класс."
+        },
+        { "type": "heading", "text": "6. Порядок catch" },
+        {
+          "type": "warn",
+          "html": "⚠️ Catch идут <strong>от частного к общему</strong>. Если сначала поймать <code>Exception</code>, то специфичные не сработают."
+        },
+        {
+          "type": "symbol-card",
+          "symbol": "Правильно и неправильно",
+          "meaning": "Порядок catch важен",
+          "code": "// ПЛОХО — Exception съест всё\ntry {\n    findUser(0);\n} catch (Exception $e) {\n    echo \"что-то\";\n} catch (NotFoundException $e) {\n    // сюда никогда не попадём\n}\n\n// ХОРОШО\ntry {\n    findUser(0);\n} catch (NotFoundException $e) {\n    echo \"не найдено\";\n} catch (ValidationException $e) {\n    echo \"неверные данные\";\n} catch (Exception $e) {\n    echo \"другая ошибка\";\n}"
+        },
+        { "type": "heading", "text": "7. Логирование" },
+        {
+          "type": "symbol-card",
+          "symbol": "error_log",
+          "meaning": "Записать ошибку в лог",
+          "code": "try {\n    riskyOperation();\n} catch (Exception $e) {\n    error_log($e->getMessage());\n    error_log($e->getTraceAsString());\n    echo \"Что-то пошло не так\";\n}",
+          "human": "Пользователю — нейтральное сообщение. В лог — подробности. Никогда не показывай стек пользователю."
+        },
+        {
+          "type": "symbol-card",
+          "symbol": "Monolog",
+          "meaning": "Профессиональное логирование",
+          "code": "use Monolog\\Logger;\nuse Monolog\\Handler\\StreamHandler;\n\n$log = new Logger('app');\n$log->pushHandler(new StreamHandler('app.log', Logger::WARNING));\n\n$log->warning('Что-то странное');\n$log->error('Ошибка!');",
+          "human": "Monolog — библиотека для логов. Уровни: debug, info, warning, error, critical."
+        },
+        { "type": "heading", "text": "8. Уровни ошибок PHP" },
+        {
+          "type": "table",
+          "title": "Стандартные исключения PHP",
+          "rows": [
+            { "code": "Exception", "desc": "базовое исключение" },
+            { "code": "RuntimeException", "desc": "ошибка во время выполнения" },
+            { "code": "InvalidArgumentException", "desc": "неверный аргумент" },
+            { "code": "LogicException", "desc": "ошибка логики" },
+            { "code": "PDOException", "desc": "ошибка БД" },
+            { "code": "TypeError", "desc": "неверный тип (PHP 7+)" }
+          ]
+        },
+        {
+          "type": "note",
+          "html": "<strong>Главное:</strong> <code>try/catch</code> — для обработки. <code>throw</code> — бросить. <code>finally</code> — выполнится всегда. Свои исключения — <code>extends Exception</code>. Catch — от частного к общему. Логируй через <code>error_log</code> или Monolog.<br><br><strong>Домашка:</strong> напиши функцию <code>divide($a, $b)</code>, которая бросает <code>InvalidArgumentException</code> при делении на ноль. Поймай в <code>try/catch</code>, выведи сообщение. Потом добавь <code>finally</code> с выводом «Операция завершена»."
+        }
+      ]
+    },
+    
+    {
+      "id": "lesson18",
+      "title": "Урок 18. Git — основы",
+      "subtitle": "Система контроля версий. Как работать в команде и не терять код.",
+      "blocks": [
+        { "type": "heading", "text": "1. Зачем Git" },
+        {
+          "type": "symbol-card",
+          "symbol": "Проблема",
+          "meaning": "«final_v2_LAST_настоящий.zip»",
+          "text": "Без Git версии файлов копятся папками. С Git — одна история изменений, можно откатиться, работать вместе.",
+          "code": "# Плохо\nproject_v1.zip\nproject_v2_final.zip\nproject_v2_final_FIXED.zip\n\n# Хорошо — один репозиторий с историей\nproject/",
+          "human": "Git помнит все изменения и позволяет вернуться к любой точке."
+        },
+        { "type": "heading", "text": "2. Три состояния" },
+        {
+          "type": "grid-2",
+          "cards": [
+            { "type": "symbol-card", "symbol": "Working Directory", "meaning": "где ты правишь файлы", "code": "Файлы на диске" },
+            { "type": "symbol-card", "symbol": "Staging Area", "meaning": "что готово к коммиту", "code": "git add" },
+            { "type": "symbol-card", "symbol": "Repository", "meaning": "сохранённая история", "code": "git commit" },
+            { "type": "symbol-card", "symbol": "git status", "meaning": "покажи, что где", "code": "git status" }
+          ]
+        },
+        { "type": "heading", "text": "3. Основные команды" },
+        {
+          "type": "table",
+          "title": "Ежедневные команды",
+          "rows": [
+            { "code": "git init", "desc": "создать репозиторий" },
+            { "code": "git clone URL", "desc": "скачать чужой репозиторий" },
+            { "code": "git status", "desc": "что изменилось" },
+            { "code": "git add file", "desc": "подготовить файл к коммиту" },
+            { "code": "git add .", "desc": "подготовить все изменения" },
+            { "code": "git commit -m \"текст\"", "desc": "сохранить с сообщением" },
+            { "code": "git log", "desc": "история коммитов" },
+            { "code": "git diff", "desc": "что изменилось в файлах" },
+            { "code": "git push", "desc": "отправить на сервер (GitHub)" },
+            { "code": "git pull", "desc": "забрать изменения с сервера" }
+          ]
+        },
+        { "type": "heading", "text": "4. Первый коммит" },
+        {
+          "type": "symbol-card",
+          "symbol": "init → add → commit",
+          "meaning": "Классический цикл",
+          "code": "git init\ngit add .\ngit commit -m \"Первый коммит\"\n\n# Привязать к GitHub\ngit remote add origin https://github.com/user/repo.git\ngit push -u origin main",
+          "human": "Создал репозиторий → добавил файлы → сохранил → отправил на GitHub."
+        },
+        { "type": "heading", "text": "5. Ветки" },
+        {
+          "type": "symbol-card",
+          "symbol": "branch, checkout",
+          "meaning": "Параллельные версии кода",
+          "code": "git branch feature-login    # создать ветку\ngit checkout feature-login  # переключиться\ngit checkout -b feature-x   # создать и переключиться\n\ngit branch                  # список веток\ngit checkout main           # вернуться в main",
+          "human": "Ветка — отдельная линия разработки. Можно делать фичу, не ломая main."
+        },
+        { "type": "heading", "text": "6. Слияние" },
+        {
+          "type": "symbol-card",
+          "symbol": "merge",
+          "meaning": "Слить ветку обратно",
+          "code": "git checkout main\ngit merge feature-login\n\n# Если конфликт — Git попросит решить вручную",
+          "human": "Сначала переключись на main, потом merge фичи."
+        },
+        {
+          "type": "warn",
+          "html": "⚠️ <strong>Конфликт</strong> — когда два человека изменили одну строку. Git пометит файл, надо вручную выбрать, что оставить, потом <code>git add</code> и <code>git commit</code>."
+        },
+        { "type": "heading", "text": "7. .gitignore" },
+        {
+          "type": "symbol-card",
+          "symbol": ".gitignore",
+          "meaning": "Что НЕ коммитить",
+          "code": "# .gitignore\n/vendor/\n/node_modules/\n.env\n*.log\n.idea/\n.vscode/\n.DS_Store",
+          "human": "Здесь перечислены файлы и папки, которые Git должен игнорировать."
+        },
+        { "type": "heading", "text": "8. Типичный рабочий день" },
+        {
+          "type": "symbol-card",
+          "symbol": "workflow",
+          "meaning": "Как работают в команде",
+          "code": "git pull                       # забрать свежее\ngit checkout -b feature-x      # новая ветка\n# ... правки ...\ngit add .\ngit commit -m \"Добавил фичу\"\ngit push -u origin feature-x\n\n# На GitHub — Pull Request\n# После ревью — merge в main",
+          "human": "Обновился, создал ветку, сделал фичу, запушил, открыл PR, после ревью — влил в main."
+        },
+        { "type": "heading", "text": "9. Откат изменений" },
+        {
+          "type": "table",
+          "title": "Если что-то сломал",
+          "rows": [
+            { "code": "git checkout file", "desc": "отменить правки в файле" },
+            { "code": "git reset HEAD file", "desc": "убрать из staging" },
+            { "code": "git reset --hard HEAD", "desc": "откатить всё к последнему коммиту" },
+            { "code": "git revert COMMIT", "desc": "отменить конкретный коммит" }
+          ]
+        },
+        {
+          "type": "warn",
+          "html": "⚠️ <code>git reset --hard</code> <strong>удаляет все незакоммиченные изменения</strong>. Используй с осторожностью."
+        },
+        {
+          "type": "note",
+          "html": "<strong>Главное:</strong> <code>add → commit → push</code> — базовый цикл. Ветки — для параллельной работы. <code>merge</code> — слияние. <code>.gitignore</code> — что не коммитить. <code>pull</code> — забирай перед работой.<br><br><strong>Домашка:</strong> зарегистрируйся на GitHub, создай репозиторий, залей туда свой проект с уроками. Сделай ветку <code>feature-search</code>, добавь поиск по урокам, запушь, открой Pull Request."
+        }
+      ]
+    },
+    
+    {
+      "id": "lesson19",
+      "title": "Урок 19. Основы SQL",
+      "subtitle": "SELECT, INSERT, UPDATE, DELETE, JOIN. Как говорить с базой данных.",
+      "blocks": [
+        { "type": "heading", "text": "1. Что такое SQL" },
+        {
+          "type": "symbol-card",
+          "symbol": "SQL",
+          "meaning": "Structured Query Language — язык запросов к БД",
+          "text": "База данных хранит таблицы. SQL — способ спросить: «дай мне то» или «положи это».",
+          "code": "Таблица users:\n| id | name  | email          |\n| 1  | Тим   | tim@mail.ru    |\n| 2  | Аня   | anya@mail.ru   |\n| 3  | Борис | boris@mail.ru  |",
+          "human": "Таблица — как Excel. Строки — записи, столбцы — поля."
+        },
+        { "type": "heading", "text": "2. SELECT — чтение" },
+        {
+          "type": "symbol-card",
+          "symbol": "SELECT",
+          "meaning": "Выбрать данные",
+          "code": "-- Все поля\nSELECT * FROM users;\n\n-- Конкретные поля\nSELECT name, email FROM users;\n\n-- С условием\nSELECT * FROM users WHERE id = 1;\nSELECT * FROM users WHERE age > 18;\n\n-- Сортировка\nSELECT * FROM users ORDER BY name ASC;\n\n-- Лимит\nSELECT * FROM users LIMIT 10 OFFSET 20;",
+          "human": "* — «все поля». WHERE — фильтр. ORDER BY — сортировка. LIMIT — сколько строк."
+        },
+        { "type": "table",
+          "title": "Операторы WHERE",
+          "rows": [
+            { "code": "=", "desc": "равно" },
+            { "code": "!=", "desc": "не равно" },
+            { "code": ">, <, >=, <=", "desc": "больше/меньше" },
+            { "code": "LIKE", "desc": "по шаблону", "example": "WHERE name LIKE 'Т%'" },
+            { "code": "IN", "desc": "в списке", "example": "WHERE id IN (1,2,3)" },
+            { "code": "BETWEEN", "desc": "в диапазоне", "example": "WHERE age BETWEEN 18 AND 65" },
+            { "code": "IS NULL", "desc": "пустое", "example": "WHERE email IS NULL" }
+          ]
+        },
+        { "type": "heading", "text": "3. INSERT — добавление" },
+        {
+          "type": "symbol-card",
+          "symbol": "INSERT INTO",
+          "meaning": "Добавить запись",
+          "code": "INSERT INTO users (name, email, age)\nVALUES ('Тим', 'tim@mail.ru', 30);\n\n-- Несколько сразу\nINSERT INTO users (name, email) VALUES\n('Аня', 'anya@mail.ru'),\n('Борис', 'boris@mail.ru');",
+          "human": "Сначала список полей, потом значения в том же порядке."
+        },
+        { "type": "heading", "text": "4. UPDATE — изменение" },
+        {
+          "type": "symbol-card",
+          "symbol": "UPDATE",
+          "meaning": "Изменить запись",
+          "code": "UPDATE users\nSET name = 'Тимофей', age = 31\nWHERE id = 1;",
+          "human": "SET — что меняем. WHERE — у кого меняем. Без WHERE — изменит ВСЕХ."
+        },
+        {
+          "type": "warn",
+          "html": "⚠️ <strong>Никогда</strong> не пиши <code>UPDATE</code> или <code>DELETE</code> без <code>WHERE</code>. Это изменит/удалит все строки."
+        },
+        { "type": "heading", "text": "5. DELETE — удаление" },
+        {
+          "type": "symbol-card",
+          "symbol": "DELETE FROM",
+          "meaning": "Удалить запись",
+          "code": "DELETE FROM users WHERE id = 5;\n\n-- Удалить всё (осторожно!)\nDELETE FROM users;",
+          "human": "DELETE FROM таблица WHERE условие. Без WHERE — сотрёт всю таблицу."
+        },
+        { "type": "heading", "text": "6. JOIN — соединение таблиц" },
+        {
+          "type": "symbol-card",
+          "symbol": "JOIN",
+          "meaning": "Связать данные из разных таблиц",
+          "code": "Таблица orders:\n| id | user_id | total |\n| 1  | 1       | 5000  |\n| 2  | 2       | 3000  |\n\n-- INNER JOIN — только совпадения\nSELECT users.name, orders.total\nFROM users\nINNER JOIN orders ON users.id = orders.user_id;",
+          "human": "JOIN соединяет таблицы по общему полю. Здесь — по users.id = orders.user_id."
+        },
+        {
+          "type": "table",
+          "title": "Виды JOIN",
+          "rows": [
+            { "code": "INNER JOIN", "desc": "только совпадения в обеих таблицах" },
+            { "code": "LEFT JOIN", "desc": "все из левой + совпадения из правой" },
+            { "code": "RIGHT JOIN", "desc": "все из правой + совпадения из левой" },
+            { "code": "FULL JOIN", "desc": "все из обеих (не во всех СУБД)" }
+          ]
+        },
+        { "type": "heading", "text": "7. GROUP BY и агрегаты" },
+        {
+          "type": "symbol-card",
+          "symbol": "COUNT, SUM, AVG",
+          "meaning": "Посчитать по группам",
+          "code": "-- Сколько всего пользователей\nSELECT COUNT(*) FROM users;\n\n-- Сумма заказов пользователя\nSELECT user_id, SUM(total) as sum\nFROM orders\nGROUP BY user_id;\n\n-- Средний чек\nSELECT AVG(total) FROM orders;",
+          "human": "GROUP BY — «сгруппируй по». COUNT — сколько. SUM — сумма. AVG — среднее."
+        },
+        { "type": "heading", "text": "8. Создание таблиц" },
+        {
+          "type": "symbol-card",
+          "symbol": "CREATE TABLE",
+          "meaning": "Создать таблицу",
+          "code": "CREATE TABLE users (\n    id INT AUTO_INCREMENT PRIMARY KEY,\n    name VARCHAR(100) NOT NULL,\n    email VARCHAR(255) UNIQUE NOT NULL,\n    age INT DEFAULT 0,\n    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP\n);",
+          "human": "Описываем поля: имя, тип, ограничения. PRIMARY KEY — уникальный ID. AUTO_INCREMENT — сам увеличивается."
+        },
+        {
+          "type": "table",
+          "title": "Типы данных",
+          "rows": [
+            { "code": "INT", "desc": "целое число" },
+            { "code": "VARCHAR(n)", "desc": "строка до n символов" },
+            { "code": "TEXT", "desc": "длинный текст" },
+            { "code": "DECIMAL(10,2)", "desc": "дробное с точностью" },
+            { "code": "DATE, DATETIME", "desc": "дата и время" },
+            { "code": "BOOLEAN", "desc": "истина/ложь" }
+          ]
+        },
+        {
+          "type": "note",
+          "html": "<strong>Главное:</strong> <code>SELECT</code> — читать, <code>INSERT</code> — добавить, <code>UPDATE</code> — изменить, <code>DELETE</code> — удалить. <code>WHERE</code> — фильтр. <code>JOIN</code> — связать таблицы. <code>GROUP BY</code> — группировка. Без <code>WHERE</code> в UPDATE/DELETE — катастрофа.<br><br><strong>Домашка:</strong> создай таблицы <code>users</code> (id, name, email) и <code>posts</code> (id, user_id, title, body). Добавь 3 пользователей, 5 постов. Сделай SELECT с JOIN: выведи заголовки постов с именем автора."
+        }
+      ]
+    },
+    
+    {
+      "id": "lesson20",
+      "title": "Урок 20. Laravel — введение",
+      "subtitle": "Самый популярный фреймворк PHP. Маршруты, контроллеры, модели.",
+      "blocks": [
+        { "type": "heading", "text": "1. Зачем фреймворк" },
+        {
+          "type": "symbol-card",
+          "symbol": "Проблема",
+          "meaning": "Каждый проект с нуля — боль",
+          "text": "Свои роуты, своя валидация, свой ORM. Фреймворк даёт готовое, проверенное сообществом.",
+          "code": "// Без фреймворка — пишешь всё сам\nif ($_SERVER['REQUEST_URI'] === '/users') {\n    // ...\n} elseif ($_SERVER['REQUEST_URI'] === '/posts') {\n    // ...\n}\n\n// В Laravel — одна строка\nRoute::get('/users', [UserController::class, 'index']);",
+          "human": "Laravel берёт на себя рутину: маршруты, БД, валидацию, шаблоны, авторизацию."
+        },
+        { "type": "heading", "text": "2. Установка" },
+        {
+          "type": "symbol-card",
+          "symbol": "composer create-project",
+          "meaning": "Создать проект",
+          "code": "composer create-project laravel/laravel my-app\ncd my-app\nphp artisan serve\n\n# Открой http://localhost:8000",
+          "human": "Composer скачает Laravel и все зависимости. php artisan serve запускает локальный сервер."
+        },
+        { "type": "heading", "text": "3. Маршруты (routes)" },
+        {
+          "type": "symbol-card",
+          "symbol": "routes/web.php",
+          "meaning": "Где какой URL что делает",
+          "code": "use App\\Http\\Controllers\\UserController;\n\nRoute::get('/', function () {\n    return view('welcome');\n});\n\nRoute::get('/users', [UserController::class, 'index']);\nRoute::get('/users/{id}', [UserController::class, 'show']);\nRoute::post('/users', [UserController::class, 'store']);\nRoute::put('/users/{id}', [UserController::class, 'update']);\nRoute::delete('/users/{id}', [UserController::class, 'destroy']);",
+          "human": "get — открыть страницу. post — создать. put — обновить. delete — удалить. {id} — параметр из URL."
+        },
+        {
+          "type": "table",
+          "title": "REST-методы",
+          "rows": [
+            { "code": "GET", "desc": "получить данные" },
+            { "code": "POST", "desc": "создать" },
+            { "code": "PUT/PATCH", "desc": "обновить" },
+            { "code": "DELETE", "desc": "удалить" }
+          ]
+        },
+        { "type": "heading", "text": "4. Контроллеры" },
+        {
+          "type": "symbol-card",
+          "symbol": "Controller",
+          "meaning": "Класс, который обрабатывает запросы",
+          "code": "// php artisan make:controller UserController\n\nnamespace App\\Http\\Controllers;\n\nuse App\\Models\\User;\n\nclass UserController extends Controller\n{\n    public function index()\n    {\n        $users = User::all();\n        return view('users.index', compact('users'));\n    }\n\n    public function show($id)\n    {\n        $user = User::findOrFail($id);\n        return view('users.show', compact('user'));\n    }\n}",
+          "human": "Контроллер — посредник. Принимает запрос, работает с моделью, отдаёт view."
+        },
+        { "type": "heading", "text": "5. Модели (Eloquent ORM)" },
+        {
+          "type": "symbol-card",
+          "symbol": "Model",
+          "meaning": "Класс, привязанный к таблице",
+          "code": "// php artisan make:model User\n\nnamespace App\\Models;\n\nuse Illuminate\\Database\\Eloquent\\Model;\n\nclass User extends Model\n{\n    protected $fillable = ['name', 'email'];\n}\n\n// Использование\n$users = User::all();              // все\n$user = User::find(1);             // по id\n$user = User::where('age', '>', 18)->get();\nUser::create(['name' => 'Тим']);   // создать",
+          "human": "Модель User привязана к таблице users. Вместо SQL — методы PHP."
+        },
+        { "type": "heading", "text": "6. Blade — шаблоны" },
+        {
+          "type": "symbol-card",
+          "symbol": "Blade",
+          "meaning": "Шаблонизатор Laravel",
+          "code": "<!-- resources/views/users/index.blade.php -->\n\n<h1>Пользователи</h1>\n\n@foreach ($users as $user)\n    <div>\n        <strong>{{ $user->name }}</strong>\n        <em>{{ $user->email }}</em>\n    </div>\n@endforeach\n\n@if ($users->isEmpty())\n    <p>Нет пользователей</p>\n@endif",
+          "human": "{{ }} — вывод с экранированием. @foreach, @if — как в PHP, но чище."
+        },
+        { "type": "heading", "text": "7. Миграции" },
+        {
+          "type": "symbol-card",
+          "symbol": "migration",
+          "meaning": "Версии структуры БД",
+          "code": "// php artisan make:migration create_posts_table\n\nSchema::create('posts', function (Blueprint $table) {\n    $table->id();\n    $table->foreignId('user_id')->constrained();\n    $table->string('title');\n    $table->text('body');\n    $table->timestamps();\n});\n\n// php artisan migrate",
+          "human": "Миграция — код, который создаёт таблицу. Хранится в Git. Можно откатить."
+        },
+        { "type": "heading", "text": "8. Artisan — CLI" },
+        {
+          "type": "symbol-card",
+          "symbol": "php artisan",
+          "meaning": "Командная строка Laravel",
+          "code": "php artisan serve              # запустить сервер\nphp artisan make:controller UserController\nphp artisan make:model Post\nphp artisan make:migration create_posts_table\nphp artisan migrate            # применить миграции\nphp artisan migrate:rollback   # откатить последнюю\nphp artisan tinker             # REPL для экспериментов\nphp artisan route:list         # список маршрутов",
+          "human": "artisan — «швейцарский нож» Laravel. Генерирует код, управляет БД, запускает сервер."
+        },
+        { "type": "heading", "text": "9. Что дальше" },
+        {
+          "type": "table",
+          "title": "Куда копать",
+          "rows": [
+            { "code": "Eloquent", "desc": "связи: hasMany, belongsTo" },
+            { "code": "Middleware", "desc": "проверки до контроллера (авторизация)" },
+            { "code": "Validation", "desc": "встроенная валидация форм" },
+            { "code": "Auth", "desc": "готовая авторизация" },
+            { "code": "API Resources", "desc": "JSON API" },
+            { "code": "Queues", "desc": "фоновые задачи" },
+            { "code": "Testing", "desc": "PHPUnit + Pest" }
+          ]
+        },
+        {
+          "type": "note",
+          "html": "<strong>Главное:</strong> Laravel — самый популярный фреймворк PHP. <code>routes</code> — URL. <code>Controller</code> — обработка. <code>Model</code> — БД через Eloquent. <code>Blade</code> — шаблоны. <code>migrations</code> — версии структуры. <code>artisan</code> — CLI.<br><br><strong>Домашка:</strong> установи Laravel, создай модель <code>Post</code> с миграцией (title, body). Сделай контроллер с методами index и show. Настрой маршруты. Выведи список постов через Blade."
+        }
+      ]
+    },
+    
+    {
+      "id": "lesson21",
+      "title": "Урок 21. Замыкания и callable",
+      "subtitle": "Функции как значения. use, Closure, array_map, array_filter.",
+      "blocks": [
+        { "type": "heading", "text": "1. Функция как значение" },
+        {
+          "type": "symbol-card",
+          "symbol": "Анонимная функция",
+          "meaning": "Функция без имени, которую можно передать",
+          "text": "В PHP функция — это тоже значение. Её можно положить в переменную, передать в другую функцию, вернуть.",
+          "code": "$greet = function($name) {\n    return \"Привет, $name!\";\n};\n\necho $greet(\"Тим\"); // Привет, Тим!",
+          "human": "В переменной $greet лежит функция. Вызывается как обычная — со скобками."
+        },
+        { "type": "heading", "text": "2. use — захват переменной снаружи" },
+        {
+          "type": "symbol-card",
+          "symbol": "use ($x)",
+          "meaning": "Взять переменную из внешней области",
+          "code": "$prefix = \"Господин \";\n\n$greet = function($name) use ($prefix) {\n    return $prefix . $name;\n};\n\necho $greet(\"Тим\"); // Господин Тим",
+          "human": "Без use функция не видит $prefix. С use — видит."
+        },
+        {
+          "type": "warn",
+          "html": "⚠️ <code>use ($x)</code> захватывает значение на момент создания. Если <code>$x</code> потом изменится — внутри функции останется старое. Чтобы захватить по ссылке — <code>use (&$x)</code>."
+        },
+        { "type": "heading", "text": "3. Стрелочные функции (PHP 7.4+)" },
+        {
+          "type": "symbol-card",
+          "symbol": "fn() =>",
+          "meaning": "Короткая запись, авто-захват",
+          "code": "$prefix = \"Господин \";\n\n// Обычная\n$greet = function($name) use ($prefix) {\n    return $prefix . $name;\n};\n\n// Стрелочная\n$greet = fn($name) => $prefix . $name;",
+          "human": "fn() => автоматически захватывает внешние переменные. Не нужен use. Только для одного выражения."
+        },
+        { "type": "heading", "text": "4. callable — тип «функция»" },
+        {
+          "type": "symbol-card",
+          "symbol": "callable",
+          "meaning": "Всё, что можно вызвать",
+          "code": "function apply($value, callable $fn) {\n    return $fn($value);\n}\n\necho apply(5, fn($x) => $x * 2);      // 10\necho apply(\"тим\", 'strtoupper');       // ТИМ\necho apply(5, [Math::class, 'double']); // вызов статического метода",
+          "human": "callable — это и анонимная функция, и имя функции, и массив [класс, метод]."
+        },
+        { "type": "heading", "text": "5. array_map — применить ко всем" },
+        {
+          "type": "symbol-card",
+          "symbol": "array_map",
+          "meaning": "Преобразовать каждый элемент",
+          "code": "$nums = [1, 2, 3, 4];\n\n$doubled = array_map(fn($x) => $x * 2, $nums);\n// [2, 4, 6, 8]\n\n$names = ['тим', 'аня', 'борис'];\n$upper = array_map('strtoupper', $names);\n// ['ТИМ', 'АНЯ', 'БОРИС']",
+          "human": "array_map берёт каждый элемент, применяет функцию, возвращает новый массив. Старый не меняется."
+        },
+        { "type": "heading", "text": "6. array_filter — оставить нужные" },
+        {
+          "type": "symbol-card",
+          "symbol": "array_filter",
+          "meaning": "Отфильтровать по условию",
+          "code": "$nums = [1, 2, 3, 4, 5, 6];\n\n$even = array_filter($nums, fn($x) => $x % 2 === 0);\n// [2, 4, 6]\n\n$adults = array_filter($users, fn($u) => $u['age'] >= 18);",
+          "human": "array_filter оставляет только те элементы, для которых функция вернула true."
+        },
+        { "type": "heading", "text": "7. array_reduce — свернуть в одно" },
+        {
+          "type": "symbol-card",
+          "symbol": "array_reduce",
+          "meaning": "Пройти по массиву и получить одно значение",
+          "code": "$nums = [1, 2, 3, 4];\n\n$sum = array_reduce($nums, fn($carry, $x) => $carry + $x, 0);\n// 10\n\n$max = array_reduce($nums, fn($carry, $x) => max($carry, $x), 0);\n// 4",
+          "human": "carry — накопитель. Начинается с 0. Каждый раз прибавляем элемент. В итоге — сумма."
+        },
+        { "type": "heading", "text": "8. usort — своя сортировка" },
+        {
+          "type": "symbol-card",
+          "symbol": "usort",
+          "meaning": "Сортировка с функцией сравнения",
+          "code": "$users = [\n    ['name' => 'Тим', 'age' => 30],\n    ['name' => 'Аня', 'age' => 25],\n    ['name' => 'Борис', 'age' => 40],\n];\n\nusort($users, fn($a, $b) => $a['age'] <=> $b['age']);\n// Аня (25), Тим (30), Борис (40)",
+          "human": "usort меняет порядок. Функция должна вернуть -1 (a меньше b), 0 (равны), 1 (a больше b). Оператор <=> делает это сам."
+        },
+        {
+          "type": "note",
+          "html": "<strong>Главное:</strong> функция — это значение. <code>use</code> захватывает переменные снаружи. <code>fn() =></code> — короткая запись с авто-захватом. <code>callable</code> — тип «что-то вызываемое». <code>array_map</code> — преобразовать, <code>array_filter</code> — отфильтровать, <code>array_reduce</code> — свернуть, <code>usort</code> — отсортировать.<br><br><strong>Домашка:</strong> дан массив чисел. Через <code>array_filter</code> оставь чётные, через <code>array_map</code> возведи в квадрат, через <code>array_reduce</code> найди сумму. Выведи результат."
+        }
+      ]
+    },
+    
+    {
+      "id": "lesson22",
+      "title": "Урок 22. Генераторы и yield",
+      "subtitle": "Ленивые вычисления. Как обрабатывать миллион строк, не съедая память.",
+      "blocks": [
+        { "type": "heading", "text": "1. Проблема: миллион строк" },
+        {
+          "type": "symbol-card",
+          "symbol": "Проблема памяти",
+          "meaning": "Массив на миллион элементов съедает гигабайты",
+          "code": "// 1 млн чисел — ~32 МБ только на массив\nfunction getNumbers() {\n    $arr = [];\n    for ($i = 0; $i < 1000000; $i++) {\n        $arr[] = $i;\n    }\n    return $arr;\n}\n\nforeach (getNumbers() as $n) {\n    echo $n;\n}\n// Всё держится в памяти сразу",
+          "human": "Массив целиком лежит в памяти. Для больших данных — плохо."
+        },
+        { "type": "heading", "text": "2. Генератор — решение" },
+        {
+          "type": "symbol-card",
+          "symbol": "yield",
+          "meaning": "Отдавай по одному значению, не создавая массив",
+          "code": "function getNumbers() {\n    for ($i = 0; $i < 1000000; $i++) {\n        yield $i;   // ← отдать одно значение\n    }\n}\n\nforeach (getNumbers() as $n) {\n    echo $n;\n}\n// В памяти — только текущее число",
+          "human": "yield — «отдай значение и подожди следующего запроса». Память не растёт."
+        },
+        { "type": "heading", "text": "3. Как это работает" },
+        {
+          "type": "symbol-card",
+          "symbol": "Генератор = итератор",
+          "meaning": "Функция с yield возвращает объект-генератор",
+          "code": "$gen = getNumbers();\n\n// Можно вручную:\necho $gen->current(); // 0\n$gen->next();\necho $gen->current(); // 1\n\n// Или в foreach — он сам вызывает next()",
+          "human": "Генератор помнит, где остановился. Каждый вызов next() продолжает с того же места."
+        },
+        { "type": "heading", "text": "4. Пример: чтение большого файла" },
+        {
+          "type": "symbol-card",
+          "symbol": "Построчно из файла",
+          "meaning": "Не грузим весь файл",
+          "code": "function readLines(string $file): Generator {\n    $handle = fopen($file, 'r');\n    while (($line = fgets($handle)) !== false) {\n        yield trim($line);\n    }\n    fclose($handle);\n}\n\nforeach (readLines('huge.log') as $line) {\n    if (str_contains($line, 'ERROR')) {\n        echo $line . \"\\n\";\n    }\n}",
+          "human": "Читаем построчно, отдаём через yield. Файл может быть 10 ГБ — память не проблема."
+        },
+        { "type": "heading", "text": "5. yield с ключом" },
+        {
+          "type": "symbol-card",
+          "symbol": "yield $key => $value",
+          "meaning": "Можно отдавать ключи",
+          "code": "function getUsers() {\n    yield 1 => 'Тим';\n    yield 2 => 'Аня';\n    yield 3 => 'Борис';\n}\n\nforeach (getUsers() as $id => $name) {\n    echo \"$id: $name\\n\";\n}",
+          "human": "yield с => — работает как ассоциативный массив, но лениво."
+        },
+        { "type": "heading", "text": "6. Генератор из БД" },
+        {
+          "type": "symbol-card",
+          "symbol": "Пример с PDO",
+          "meaning": "Миллион записей — без памяти",
+          "code": "function allUsers(PDO $pdo): Generator {\n    $stmt = $pdo->query(\"SELECT * FROM users\");\n    while ($row = $stmt->fetch()) {\n        yield $row;\n    }\n}\n\nforeach (allUsers($pdo) as $user) {\n    // обрабатываем по одному\n    if ($user['age'] > 18) {\n        echo $user['name'] . \"\\n\";\n    }\n}",
+          "human": "PDO отдаёт по строке, генератор передаёт дальше. Даже 10 млн юзеров — не проблема."
+        },
+        { "type": "heading", "text": "7. yield from — делегирование" },
+        {
+          "type": "symbol-card",
+          "symbol": "yield from",
+          "meaning": "Передать управление другому генератору",
+          "code": "function inner() {\n    yield 1;\n    yield 2;\n}\n\nfunction outer() {\n    yield 0;\n    yield from inner();  // ← вставить всё из inner\n    yield 3;\n}\n\nforeach (outer() as $n) echo $n; // 0 1 2 3",
+          "human": "yield from — «отдай всё, что отдаёт другой генератор»."
+        },
+        { "type": "heading", "text": "8. Когда использовать" },
+        {
+          "type": "table",
+          "title": "Массив vs Генератор",
+          "rows": [
+            { "code": "Массив", "desc": "нужно много раз обходить", "example": "маленький набор данных" },
+            { "code": "Массив", "desc": "нужна сортировка, поиск", "example": "usort, in_array" },
+            { "code": "Генератор", "desc": "большие данные", "example": "лог-файлы, БД" },
+            { "code": "Генератор", "desc": "данные из внешнего источника", "example": "API постранично" },
+            { "code": "Генератор", "desc": "не нужен весь результат сразу", "example": "потоковая обработка" }
+          ]
+        },
+        {
+          "type": "warn",
+          "html": "⚠️ Генератор <strong>нельзя перемотать</strong>. Один раз прошёл — всё. Нужно снова — создай новый."
+        },
+        {
+          "type": "note",
+          "html": "<strong>Главное:</strong> генератор — функция с <code>yield</code>. Отдаёт по одному значению, не держит всё в памяти. Идеален для больших файлов, БД, API. <code>yield from</code> — делегирование. Нельзя перемотать.<br><br><strong>Домашка:</strong> напиши генератор <code>fibonacci()</code>, который бесконечно отдаёт числа Фибоначчи. Через <code>foreach</code> выведи первые 20. Потом сделай генератор <code>csvRows($file)</code>, который читает CSV построчно."
+        }
+      ]
+    },
+    
+    {
+      "id": "lesson23",
+      "title": "Урок 23. Ссылки и копирование",
+      "subtitle": "Как PHP передаёт данные. &, by value, by reference. Почему это важно.",
+      "blocks": [
+        { "type": "heading", "text": "1. Присваивание — копия" },
+        {
+          "type": "symbol-card",
+          "symbol": "= копирует",
+          "meaning": "По умолчанию переменные копируются",
+          "code": "$a = 5;\n$b = $a;   // копия\n$b = 10;\n\necho $a; // 5 — не изменилось\necho $b; // 10",
+          "human": "Изменение $b не влияет на $a. Это разные ячейки памяти."
+        },
+        { "type": "heading", "text": "2. Ссылка через &" },
+        {
+          "type": "symbol-card",
+          "symbol": "&",
+          "meaning": "Две переменные — одна ячейка",
+          "code": "$a = 5;\n$b = &$a;   // ссылка\n$b = 10;\n\necho $a; // 10 — тоже изменилось!\necho $b; // 10",
+          "human": "& создаёт ссылку. $a и $b — два имени одной переменной."
+        },
+        { "type": "heading", "text": "3. Массивы и объекты" },
+        {
+          "type": "grid-2",
+          "cards": [
+            {
+              "type": "symbol-card",
+              "symbol": "Массив",
+              "meaning": "Копируется",
+              "code": "$a = [1, 2, 3];\n$b = $a;\n$b[] = 4;\n\nprint_r($a);\n// [1, 2, 3]\nprint_r($b);\n// [1, 2, 3, 4]"
+            },
+            {
+              "type": "symbol-card",
+              "symbol": "Объект",
+              "meaning": "Передаётся по ссылке",
+              "code": "$a = new stdClass();\n$a->x = 5;\n\n$b = $a;\n$b->x = 10;\n\necho $a->x; // 10\n// Оба указывают на один объект"
+            }
+          ]
+        },
+        {
+          "type": "warn",
+          "html": "⚠️ Массивы копируются. Объекты — нет. Это источник багов. Если нужно копировать объект — используй <code>clone</code>."
+        },
+        { "type": "heading", "text": "4. Передача в функцию" },
+        {
+          "type": "symbol-card",
+          "symbol": "function foo($x)",
+          "meaning": "По умолчанию — копия",
+          "code": "function double($x) {\n    $x = $x * 2;\n}\n\n$num = 5;\ndouble($num);\necho $num; // 5 — не изменилось",
+          "human": "Функция получила копию. Что делает внутри — снаружи не видно."
+        },
+        {
+          "type": "symbol-card",
+          "symbol": "function foo(&$x)",
+          "meaning": "С & — по ссылке",
+          "code": "function double(&$x) {\n    $x = $x * 2;\n}\n\n$num = 5;\ndouble($num);\necho $num; // 10 — изменилось",
+          "human": "С & функция получает ту же ячейку. Может менять."
+        },
+        {
+          "type": "warn",
+          "html": "⚠️ Передача по ссылке — редкая практика. Обычно функция должна <strong>возвращать</strong> результат, а не менять аргумент. Но в некоторых функциях PHP (например, <code>sort()</code>) это стандарт."
+        },
+        { "type": "heading", "text": "5. clone — копия объекта" },
+        {
+          "type": "symbol-card",
+          "symbol": "clone",
+          "meaning": "Создать независимую копию объекта",
+          "code": "$a = new stdClass();\n$a->x = 5;\n\n$b = clone $a;\n$b->x = 10;\n\necho $a->x; // 5 — не изменилось\necho $b->x; // 10",
+          "human": "clone создаёт новый объект с теми же свойствами. Дальше они независимы."
+        },
+        {
+          "type": "symbol-card",
+          "symbol": "__clone",
+          "meaning": "Магический метод при клонировании",
+          "code": "class User {\n    public $name;\n    public $tags = [];\n\n    public function __clone() {\n        // копируем массив, чтобы не делиться\n        $this->tags = array_values($this->tags);\n    }\n}",
+          "human": "__clone вызывается при clone. Нужен, если у объекта есть вложенные объекты/массивы."
+        },
+        { "type": "heading", "text": "6. foreach по ссылке" },
+        {
+          "type": "symbol-card",
+          "symbol": "foreach ($arr as &$v)",
+          "meaning": "Менять элементы массива прямо в цикле",
+          "code": "$nums = [1, 2, 3];\n\nforeach ($nums as &$n) {\n    $n *= 2;\n}\nunset($n); // ВАЖНО: разорвать ссылку\n\nprint_r($nums); // [2, 4, 6]",
+          "human": "С & можно менять массив в цикле. После — обязательно unset, иначе $n останется ссылкой на последний элемент."
+        },
+        {
+          "type": "warn",
+          "html": "⚠️ <strong>Классический баг:</strong> забыл <code>unset($n)</code> после <code>foreach ($arr as &$n)</code> — следующий <code>foreach</code> по тому же массиву сломается. Всегда unset."
+        },
+        { "type": "heading", "text": "7. Когда что использовать" },
+        {
+          "type": "table",
+          "title": "Шпаргалка",
+          "rows": [
+            { "code": "$b = $a", "desc": "копия (для int/string/array)" },
+            { "code": "$b = &$a", "desc": "ссылка (обе меняются)" },
+            { "code": "$b = new Class", "desc": "объект — всегда ссылка" },
+            { "code": "clone $obj", "desc": "копия объекта" },
+            { "code": "function(&$x)", "desc": "передача по ссылке" },
+            { "code": "foreach ($a as &$v)", "desc": "менять элементы в цикле" }
+          ]
+        },
+        {
+          "type": "note",
+          "html": "<strong>Главное:</strong> скаляры и массивы копируются. Объекты — по ссылке. <code>&</code> создаёт ссылку. <code>clone</code> копирует объект. После <code>foreach as &$v</code> — <code>unset($v)</code>.<br><br><strong>Домашка:</strong> напиши функцию <code>addItem(&$arr, $item)</code>, которая добавляет элемент в массив по ссылке. Проверь, что массив снаружи меняется. Потом перепиши без & — чтобы возвращала новый массив."
+        }
+      ]
+    },
+    
+    {
+      "id": "lesson24",
+      "title": "Урок 24. Регулярные выражения",
+      "subtitle": "preg_match, preg_replace. Поиск по шаблонам.",
+      "blocks": [
+        { "type": "heading", "text": "1. Что такое регулярка" },
+        {
+          "type": "symbol-card",
+          "symbol": "Регулярное выражение",
+          "meaning": "Шаблон для поиска в тексте",
+          "text": "Позволяет искать не «точное слово», а «что-то похожее»: email, телефон, дату, номер карты.",
+          "code": "$text = \"Мой email: tim@mail.ru\";\n\nif (preg_match('/[\\w.]+@[\\w.]+/', $text, $m)) {\n    echo $m[0]; // tim@mail.ru\n}",
+          "human": "Шаблон в слешах. preg_match ищет первое совпадение. $m — массив с найденным."
+        },
+        { "type": "heading", "text": "2. Базовые символы" },
+        {
+          "type": "table",
+          "title": "Метасимволы",
+          "rows": [
+            { "code": ".", "desc": "любой символ, кроме новой строки" },
+            { "code": "\\d", "desc": "цифра 0-9" },
+            { "code": "\\w", "desc": "буква, цифра, _" },
+            { "code": "\\s", "desc": "пробел, таб, новая строка" },
+            { "code": "\\D, \\W, \\S", "desc": "НЕ цифра / НЕ буква / НЕ пробел" },
+            { "code": "^", "desc": "начало строки" },
+            { "code": "$", "desc": "конец строки" },
+            { "code": "[abc]", "desc": "любой из символов a, b, c" },
+            { "code": "[^abc]", "desc": "любой, кроме a, b, c" },
+            { "code": "[a-z]", "desc": "диапазон a-z" }
+          ]
+        },
+        { "type": "heading", "text": "3. Кванторы" },
+        {
+          "type": "table",
+          "title": "Сколько раз",
+          "rows": [
+            { "code": "*", "desc": "0 или больше" },
+            { "code": "+", "desc": "1 или больше" },
+            { "code": "?", "desc": "0 или 1" },
+            { "code": "{3}", "desc": "ровно 3" },
+            { "code": "{2,5}", "desc": "от 2 до 5" },
+            { "code": "{3,}", "desc": "3 или больше" }
+          ]
+        },
+        {
+          "type": "symbol-card",
+          "symbol": "Пример",
+          "meaning": "Телефон в формате +7-XXX-XXX-XX-XX",
+          "code": "$phone = '+7-999-123-45-67';\n\nif (preg_match('/^\\+7-\\d{3}-\\d{3}-\\d{2}-\\d{2}$/', $phone)) {\n    echo \"Верный формат\";\n}",
+          "human": "^ — начало. \\+7 — плюс и семёрка. \\d{3} — три цифры. $ — конец."
+        },
+        { "type": "heading", "text": "4. preg_match и preg_match_all" },
+        {
+          "type": "symbol-card",
+          "symbol": "preg_match",
+          "meaning": "Найти первое совпадение",
+          "code": "$text = \"Телефоны: 123-45-67 и 999-88-77\";\n\npreg_match('/\\d{3}-\\d{2}-\\d{2}/', $text, $m);\necho $m[0]; // 123-45-67",
+          "human": "Останавливается на первом совпадении. Возвращает 1 (нашёл) или 0 (нет)."
+        },
+        {
+          "type": "symbol-card",
+          "symbol": "preg_match_all",
+          "meaning": "Найти все совпадения",
+          "code": "$text = \"Телефоны: 123-45-67 и 999-88-77\";\n\npreg_match_all('/\\d{3}-\\d{2}-\\d{2}/', $text, $m);\nprint_r($m[0]);\n// ['123-45-67', '999-88-77']",
+          "human": "$m[0] — массив всех совпадений."
+        },
+        { "type": "heading", "text": "5. Группы захвата" },
+        {
+          "type": "symbol-card",
+          "symbol": "( )",
+          "meaning": "Выделить часть шаблона",
+          "code": "$date = \"2026-09-22\";\n\npreg_match('/(\\d{4})-(\\d{2})-(\\d{2})/', $date, $m);\n\necho $m[1]; // 2026 (год)\necho $m[2]; // 09 (месяц)\necho $m[3]; // 22 (день)",
+          "human": "Скобки в шаблоне — «запомни это отдельно». $m[1], $m[2], $m[3] — по порядку."
+        },
+        {
+          "type": "symbol-card",
+          "symbol": "(?P<name>...)",
+          "meaning": "Именованные группы",
+          "code": "preg_match('/(?P<year>\\d{4})-(?P<month>\\d{2})/', $date, $m);\n\necho $m['year'];  // 2026\necho $m['month']; // 09",
+          "human": "С (?P<имя>) можно обращаться по имени, а не по номеру. Удобнее."
+        },
+        { "type": "heading", "text": "6. preg_replace — замена" },
+        {
+          "type": "symbol-card",
+          "symbol": "preg_replace",
+          "meaning": "Заменить по шаблону",
+          "code": "$text = \"Телефон: 123-45-67\";\n\n// Заменить все цифры на *\n$hidden = preg_replace('/\\d/', '*', $text);\n// \"Телефон: ***-**-**\"\n\n// Переставить части даты\n$us = preg_replace('/(\\d{4})-(\\d{2})-(\\d{2})/', '$3.$2.$1', '2026-09-22');\n// \"22.09.2026\"",
+          "human": "$1, $2, $3 — ссылки на группы. Меняют порядок."
+        },
+        { "type": "heading", "text": "7. Жадность и лень" },
+        {
+          "type": "symbol-card",
+          "symbol": "жадный vs ленивый",
+          "meaning": "Как искать при повторе",
+          "code": "$html = \"<b>жирный</b> и <b>ещё</b>\";\n\n// Жадный (по умолчанию) — до последнего </b>\npreg_match('/<b>.*<\\/b>/', $html, $m);\n// \"<b>жирный</b> и <b>ещё</b>\"\n\n// Ленивый (с ?) — до первого </b>\npreg_match('/<b>.*?<\\/b>/', $html, $m);\n// \"<b>жирный</b>\"",
+          "human": ".* — «жадно» до конца. .*? — «лениво» до первого совпадения. Чаще нужен ленивый."
+        },
+        { "type": "heading", "text": "8. Практические шаблоны" },
+        {
+          "type": "table",
+          "title": "Часто нужное",
+          "rows": [
+            { "code": "/^[\\w.]+@[\\w.]+\\.[a-z]{2,}$/i", "desc": "email" },
+            { "code": "/^\\+?\\d{10,15}$/", "desc": "телефон" },
+            { "code": "/^\\d{4}-\\d{2}-\\d{2}$/", "desc": "дата YYYY-MM-DD" },
+            { "code": "/^[a-zA-Z0-9_]{3,20}$/", "desc": "логин" },
+            { "code": "/<[^>]+>/", "desc": "HTML-теги" },
+            { "code": "/https?:\\/\\/\\S+/", "desc": "URL" }
+          ]
+        },
+        {
+          "type": "warn",
+          "html": "⚠️ <strong>Не парси HTML регулярками.</strong> Для этого есть DOMDocument. Регулярки — для простых случаев (email, телефон, дата)."
+        },
+        {
+          "type": "note",
+          "html": "<strong>Главное:</strong> <code>preg_match</code> — первое, <code>preg_match_all</code> — все, <code>preg_replace</code> — замена. Метасимволы: <code>\\d \\w \\s . [] ^ $</code>. Кванторы: <code>* + ? {n,m}</code>. Группы — <code>( )</code>, именованные — <code>(?P<name>)</code>. Ленивый — <code>.*?</code>.<br><br><strong>Домашка:</strong> напиши функцию <code>validateEmail($email)</code> через <code>preg_match</code>. Потом — функцию <code>hidePhone($phone)</code>, которая заменяет все цифры, кроме последних двух, на *."
+        }
+      ]
+    },
+    
+    {
+      "id": "lesson25",
+      "title": "Урок 25. Дата и время",
+      "subtitle": "DateTime, DateInterval, часовые пояса. Всё, что нужно знать про даты.",
+      "blocks": [
+        { "type": "heading", "text": "1. Основы: date() и time()" },
+        {
+          "type": "symbol-card",
+          "symbol": "time()",
+          "meaning": "Текущий Unix timestamp",
+          "code": "echo time(); // 1758534000 — секунды с 1 января 1970",
+          "human": "Unix timestamp — число секунд с 01.01.1970 UTC. Универсальный способ хранить дату."
+        },
+        {
+          "type": "symbol-card",
+          "symbol": "date()",
+          "meaning": "Форматировать timestamp",
+          "code": "echo date('Y-m-d');           // 2026-09-22\necho date('d.m.Y H:i:s');    // 22.09.2026 14:30:00\necho date('D, d M Y');       // Mon, 22 Sep 2026",
+          "human": "date() берёт формат и (опционально) timestamp. Без второго аргумента — текущее время."
+        },
+        {
+          "type": "table",
+          "title": "Основные форматы",
+          "rows": [
+            { "code": "Y", "desc": "год 4 цифры: 2026" },
+            { "code": "y", "desc": "год 2 цифры: 26" },
+            { "code": "m", "desc": "месяц 01-12" },
+            { "code": "n", "desc": "месяц 1-12 (без нуля)" },
+            { "code": "d", "desc": "день 01-31" },
+            { "code": "j", "desc": "день 1-31 (без нуля)" },
+            { "code": "H", "desc": "часы 00-23" },
+            { "code": "i", "desc": "минуты 00-59" },
+            { "code": "s", "desc": "секунды 00-59" },
+            { "code": "N", "desc": "день недели 1-7 (пн=1)" },
+            { "code": "w", "desc": "день недели 0-6 (вс=0)" }
+          ]
+        },
+        { "type": "heading", "text": "2. DateTime — современный подход" },
+        {
+          "type": "symbol-card",
+          "symbol": "new DateTime()",
+          "meaning": "Объект даты",
+          "code": "$now = new DateTime();\necho $now->format('Y-m-d H:i:s');\n\n// Из строки\n$date = new DateTime('2026-09-22');\n\n// Из timestamp\n$date = new DateTime('@1758534000');",
+          "human": "DateTime — объект. Умеет всё: форматирование, сравнение, прибавление, разница."
+        },
+        { "type": "heading", "text": "3. Прибавить и убавить" },
+        {
+          "type": "symbol-card",
+          "symbol": "modify / add / sub",
+          "meaning": "Изменить дату",
+          "code": "$date = new DateTime('2026-09-22');\n\n$date->modify('+1 day');\n// 2026-09-23\n\n$date->modify('-1 week');\n// 2026-09-16\n\n// Через интервалы\n$date->add(new DateInterval('P1M'));  // +1 месяц\n$date->sub(new DateInterval('P1Y'));  // -1 год",
+          "human": "modify — строкой. add/sub — объектом DateInterval. P1M = 1 месяц, P1Y = 1 год, P1D = 1 день."
+        },
+        { "type": "heading", "text": "4. Разница между датами" },
+        {
+          "type": "symbol-card",
+          "symbol": "diff",
+          "meaning": "Сколько между датами",
+          "code": "$start = new DateTime('2026-01-01');\n$end = new DateTime('2026-09-22');\n\n$diff = $start->diff($end);\n\necho $diff->days;   // 264\necho $diff->y;      // 0 лет\necho $diff->m;      // 8 месяцев\necho $diff->d;      // 21 день",
+          "human": "diff возвращает DateInterval. $days — всего дней. $y, $m, $d — разложено по годам/месяцам/дням."
+        },
+        { "type": "heading", "text": "5. Сравнение дат" },
+        {
+          "type": "symbol-card",
+          "symbol": "< > ==",
+          "meaning": "DateTime можно сравнивать напрямую",
+          "code": "$a = new DateTime('2026-09-22');\n$b = new DateTime('2026-10-01');\n\nif ($a < $b) {\n    echo \"$a раньше $b\";\n}\n\n// Разница в секундах\n$diff = $b->getTimestamp() - $a->getTimestamp();",
+          "human": "Операторы сравнения работают с DateTime так же, как с числами. Удобно."
+        },
+        { "type": "heading", "text": "6. Часовые пояса" },
+        {
+          "type": "symbol-card",
+          "symbol": "DateTimeZone",
+          "meaning": "Работа с часовыми поясами",
+          "code": "$date = new DateTime('now', new DateTimeZone('Europe/Moscow'));\necho $date->format('Y-m-d H:i:s');\n\n// Сменить пояс\n$date->setTimezone(new DateTimeZone('UTC'));\n\n// Список поясов\nprint_r(DateTimeZone::listIdentifiers());",
+          "human": "Всегда указывай пояс. Иначе PHP использует тот, что в php.ini (часто UTC — не Москва!)."
+        },
+        {
+          "type": "warn",
+          "html": "⚠️ <strong>В БД храни в UTC.</strong> А при выводе — конвертируй в пояс пользователя. Иначе будут проблемы при переездах и разных регионах."
+        },
+        { "type": "heading", "text": "7. Парсинг дат из строк" },
+        {
+          "type": "symbol-card",
+          "symbol": "createFromFormat",
+          "meaning": "Разобрать дату из конкретного формата",
+          "code": "$date = DateTime::createFromFormat('d.m.Y', '22.09.2026');\necho $date->format('Y-m-d'); // 2026-09-22\n\n// Проверка\nif ($date === false) {\n    echo \"Неверный формат\";\n}",
+          "human": "createFromFormat — надёжнее, чем new DateTime('22.09.2026'). Контролируешь формат."
+        },
+        { "type": "heading", "text": "8. Практические примеры" },
+        {
+          "type": "symbol-card",
+          "symbol": "Возраст",
+          "meaning": "Сколько лет по дате рождения",
+          "code": "$birth = new DateTime('1995-03-15');\n$now = new DateTime();\n$age = $birth->diff($now)->y;\necho \"Возраст: $age\";",
+          "human": "diff()->y — полных лет."
+        },
+        {
+          "type": "symbol-card",
+          "symbol": "«5 минут назад»",
+          "meaning": "Человекопонятное время",
+          "code": "function timeAgo(DateTime $date): string {\n    $diff = $date->diff(new DateTime());\n\n    if ($diff->y > 0) return $diff->y . ' г. назад';\n    if ($diff->m > 0) return $diff->m . ' мес. назад';\n    if ($diff->d > 0) return $diff->d . ' дн. назад';\n    if ($diff->h > 0) return $diff->h . ' ч. назад';\n    if ($diff->i > 0) return $diff->i . ' мин. назад';\n    return 'только что';\n}",
+          "human": "Считаем разницу и выбираем подходящую единицу."
+        },
+        {
+          "type": "symbol-card",
+          "symbol": "Carbon",
+          "meaning": "Библиотека для удобной работы",
+          "code": "use Carbon\\Carbon;\n\necho Carbon::now()->addDays(7)->format('Y-m-d');\necho Carbon::parse('2026-09-22')->diffForHumans();\n// \"2 дня назад\"",
+          "human": "Carbon — обёртка над DateTime с кучей удобных методов. Ставится через composer. Стандарт в Laravel."
+        },
+        {
+          "type": "note",
+          "html": "<strong>Главное:</strong> <code>time()</code> — timestamp, <code>date()</code> — форматирование. <code>DateTime</code> — объект для всего. <code>modify</code>, <code>add</code>, <code>sub</code> — изменения. <code>diff</code> — разница. Всегда указывай часовой пояс. Храни в UTC. Для удобства — Carbon.<br><br><strong>Домашка:</strong> напиши функцию <code>ageFromBirthday($date)</code>, которая возвращает возраст. И функцию <code>nextBirthday($date)</code>, которая возвращает дату следующего дня рождения."
+        }
+      ]
+    },
+    
+    {
+      "id": "lesson26",
+      "title": "Урок 26. JSON и API",
+      "subtitle": "json_encode, json_decode, REST, работа с чужими API через curl и Guzzle.",
+      "blocks": [
+        { "type": "heading", "text": "1. JSON — формат обмена" },
+        {
+          "type": "symbol-card",
+          "symbol": "JSON",
+          "meaning": "JavaScript Object Notation — универсальный формат данных",
+          "text": "Ключ-значение, массивы, вложенность. Понимают все языки. Стандарт для API.",
+          "code": "{\n    \"name\": \"Тим\",\n    \"age\": 30,\n    \"tags\": [\"php\", \"js\"],\n    \"address\": {\n        \"city\": \"Москва\"\n    }\n}",
+          "human": "Похож на PHP-массив, но с фигурными скобками и без $."
+        },
+        { "type": "heading", "text": "2. json_encode — PHP → JSON" },
+        {
+          "type": "symbol-card",
+          "symbol": "json_encode",
+          "meaning": "Превратить PHP-данные в JSON-строку",
+          "code": "$data = [\n    'name' => 'Тим',\n    'age' => 30,\n    'tags' => ['php', 'js'],\n];\n\n$json = json_encode($data);\necho $json;\n// {\"name\":\"Тим\",\"age\":30,\"tags\":[\"php\",\"js\"]}",
+          "human": "Массив → JSON-строка. Готово для отправки."
+        },
+        {
+          "type": "symbol-card",
+          "symbol": "JSON_UNESCAPED_UNICODE",
+          "meaning": "Русские буквы без \\u-кодов",
+          "code": "$json = json_encode($data, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);\n\n// {\n//     \"name\": \"Тим\",\n//     \"age\": 30\n// }",
+          "human": "Без флага русские буквы превращаются в \\u0422\\u0438\\u043c. С флагом — читаемо."
+        },
+        { "type": "heading", "text": "3. json_decode — JSON → PHP" },
+        {
+          "type": "symbol-card",
+          "symbol": "json_decode",
+          "meaning": "Превратить JSON в PHP-данные",
+          "code": "$json = '{\"name\":\"Тим\",\"age\":30}';\n\n// Как объект\n$obj = json_decode($json);\necho $obj->name; // Тим\n\n// Как массив (второй аргумент true)\n$arr = json_decode($json, true);\necho $arr['name']; // Тим",
+          "human": "Без true — объект (->name). С true — массив (['name']). Для API обычно true."
+        },
+        {
+          "type": "warn",
+          "html": "⚠️ Если JSON битый — <code>json_decode</code> вернёт <code>null</code>. Проверяй через <code>json_last_error()</code> или <code>json_last_error_msg()</code>."
+        },
+        { "type": "heading", "text": "4. REST API — что это" },
+        {
+          "type": "symbol-card",
+          "symbol": "REST",
+          "meaning": "Стиль API: URL = ресурсы, методы = действия",
+          "code": "GET    /api/users         — список\nGET    /api/users/5       — один\nPOST   /api/users         — создать\nPUT    /api/users/5       — обновить\nDELETE /api/users/5       — удалить",
+          "human": "Один URL — один ресурс. Действие определяется HTTP-методом. Ответ — обычно JSON."
+        },
+        { "type": "heading", "text": "5. Запрос через curl" },
+        {
+          "type": "symbol-card",
+          "symbol": "curl",
+          "meaning": "Низкоуровневые HTTP-запросы",
+          "code": "$ch = curl_init('https://api.example.com/users');\n\ncurl_setopt_array($ch, [\n    CURLOPT_RETURNTRANSFER => true,\n    CURLOPT_HTTPHEADER => [\n        'Authorization: Bearer TOKEN',\n        'Content-Type: application/json',\n    ],\n    CURLOPT_TIMEOUT => 10,\n]);\n\n$response = curl_exec($ch);\n$code = curl_getinfo($ch, CURLINFO_HTTP_CODE);\ncurl_close($ch);\n\n$data = json_decode($response, true);",
+          "human": "curl_init — создать запрос. CURLOPT_* — настройки. curl_exec — выполнить. Возвращает строку — JSON."
+        },
+        { "type": "heading", "text": "6. POST через curl" },
+        {
+          "type": "symbol-card",
+          "symbol": "POST + JSON",
+          "meaning": "Отправить данные",
+          "code": "$payload = json_encode(['name' => 'Тим', 'age' => 30]);\n\n$ch = curl_init('https://api.example.com/users');\ncurl_setopt_array($ch, [\n    CURLOPT_RETURNTRANSFER => true,\n    CURLOPT_POST => true,\n    CURLOPT_POSTFIELDS => $payload,\n    CURLOPT_HTTPHEADER => [\n        'Content-Type: application/json',\n        'Authorization: Bearer TOKEN',\n    ],\n]);\n\n$response = curl_exec($ch);\ncurl_close($ch);",
+          "human": "CURLOPT_POST = true — метод POST. CURLOPT_POSTFIELDS — тело запроса (JSON-строка)."
+        },
+        { "type": "heading", "text": "7. Guzzle — удобная обёртка" },
+        {
+          "type": "symbol-card",
+          "symbol": "Guzzle",
+          "meaning": "Современный HTTP-клиент",
+          "code": "use GuzzleHttp\\Client;\n\n$client = new Client([\n    'base_uri' => 'https://api.example.com',\n    'headers' => ['Authorization' => 'Bearer TOKEN'],\n    'timeout' => 10,\n]);\n\n// GET\n$response = $client->get('/users');\n$users = json_decode($response->getBody(), true);\n\n// POST\n$response = $client->post('/users', [\n    'json' => ['name' => 'Тим', 'age' => 30],\n]);",
+          "human": "Guzzle сам делает json_encode, выставляет Content-Type, обрабатывает ошибки. Ставится через composer."
+        },
+        {
+          "type": "symbol-card",
+          "symbol": "Обработка ошибок",
+          "meaning": "Что может пойти не так",
+          "code": "use GuzzleHttp\\Exception\\RequestException;\n\ntry {\n    $response = $client->get('/users');\n} catch (RequestException $e) {\n    if ($e->hasResponse()) {\n        $code = $e->getResponse()->getStatusCode();\n        echo \"Ошибка $code\";\n    }\n}",
+          "human": "RequestException — все ошибки Guzzle. Можно достать код ответа, тело, заголовки."
+        },
+        { "type": "heading", "text": "8. Что смотреть в API" },
+        {
+          "type": "table",
+          "title": "Коды ответов",
+          "rows": [
+            { "code": "200 OK", "desc": "всё хорошо" },
+            { "code": "201 Created", "desc": "создано" },
+            { "code": "400 Bad Request", "desc": "неверные данные" },
+            { "code": "401 Unauthorized", "desc": "нет токена/логина" },
+            { "code": "403 Forbidden", "desc": "нет прав" },
+            { "code": "404 Not Found", "desc": "не найдено" },
+            { "code": "429 Too Many Requests", "desc": "превышен лимит" },
+            { "code": "500 Server Error", "desc": "ошибка на сервере" }
+          ]
+        },
+        {
+          "type": "symbol-card",
+          "symbol": "Правила",
+          "meaning": "Как писать клиент API",
+          "code": "// 1. Всегда таймаут\n'timeout' => 10\n\n// 2. Лови ошибки\ntry { ... } catch (RequestException $e) { ... }\n\n// 3. Логируй\nerror_log($e->getMessage());\n\n// 4. Не храни токены в коде\n$token = getenv('API_TOKEN');",
+          "human": "Таймаут обязателен — иначе зависнешь на упавшем API. Токены — в .env."
+        },
+        {
+          "type": "note",
+          "html": "<strong>Главное:</strong> <code>json_encode</code> / <code>json_decode</code> — PHP ↔ JSON. REST — URL = ресурс, метод = действие. curl — низкоуровнево, Guzzle — удобно. Всегда таймаут, всегда <code>try/catch</code>. Токены — в <code>.env</code>, не в коде.<br><br><strong>Домашка:</strong> сделай запрос к <code>https://jsonplaceholder.typicode.com/posts</code> через curl. Выведи заголовки всех постов. Потом сделай то же через Guzzle."
+        }
+      ]
+    },
+    
+    {
+      "id": "lesson27",
+      "title": "Урок 27. SOLID — принципы ООП",
+      "subtitle": "Пять принципов, которые отличают хороший код от плохого.",
+      "blocks": [
+        { "type": "heading", "text": "1. Что такое SOLID" },
+        {
+          "type": "symbol-card",
+          "symbol": "SOLID",
+          "meaning": "5 принципов проектирования классов",
+          "text": "Придумал Роберт Мартин (дядя Боб). Помогают писать код, который легко менять и расширять.",
+          "code": "S — Single Responsibility\nO — Open/Closed\nL — Liskov Substitution\nI — Interface Segregation\nD — Dependency Inversion",
+          "human": "Это не догма. Это ориентиры. Нарушать можно — но осознанно."
+        },
+        { "type": "heading", "text": "2. S — Single Responsibility" },
+        {
+          "type": "symbol-card",
+          "symbol": "Один класс — одна задача",
+          "meaning": "Класс должен иметь одну причину для изменения",
+          "code": "// ПЛОХО — класс делает всё\nclass User {\n    public function save() { /* БД */ }\n    public function sendEmail() { /* почта */ }\n    public function generateReport() { /* отчёт */ }\n}\n\n// ХОРОШО — каждый класс своё\nclass User { /* только данные */ }\nclass UserRepository { public function save(User $u) {} }\nclass Mailer { public function send($to, $msg) {} }\nclass ReportGenerator { public function forUser(User $u) {} }",
+          "human": "Меняешь логику почты — трогаешь Mailer. Меняешь БД — UserRepository. Не всё сразу."
+        },
+        { "type": "heading", "text": "3. O — Open/Closed" },
+        {
+          "type": "symbol-card",
+          "symbol": "Открыт для расширения, закрыт для изменения",
+          "meaning": "Добавлять новое — не меняя старое",
+          "code": "// ПЛОХО — каждый новый тип меняет метод\nclass Payment {\n    public function pay($type) {\n        if ($type === 'card') { /* ... */ }\n        elseif ($type === 'paypal') { /* ... */ }\n        // новый тип = правка этого метода\n    }\n}\n\n// ХОРОШО — интерфейс + реализации\ninterface PaymentMethod {\n    public function pay(float $amount): bool;\n}\nclass CardPayment implements PaymentMethod { ... }\nclass PaypalPayment implements PaymentMethod { ... }\n// новый тип = новый класс, старые не трогаем",
+          "human": "Новый способ оплаты — новый класс. Старый код не меняется. Меньше риск сломать."
+        },
+        { "type": "heading", "text": "4. L — Liskov Substitution" },
+        {
+          "type": "symbol-card",
+          "symbol": "Наследник заменяет родителя",
+          "meaning": "Код, работающий с родителем, должен работать с любым наследником",
+          "code": "// ПЛОХО — Square не ведёт себя как Rectangle\nclass Rectangle {\n    public function setWidth($w) { $this->w = $w; }\n    public function setHeight($h) { $this->h = $h; }\n    public function area() { return $this->w * $this->h; }\n}\n\nclass Square extends Rectangle {\n    public function setWidth($w) {\n        $this->w = $w;\n        $this->h = $w;  // меняет и высоту!\n    }\n}\n// Код с Rectangle сломается с Square",
+          "human": "Наследник не должен ломать ожидания. Если код ждёт «прямоугольник», квадрат должен вести себя как прямоугольник."
+        },
+        { "type": "heading", "text": "5. I — Interface Segregation" },
+        {
+          "type": "symbol-card",
+          "symbol": "Много маленьких интерфейсов лучше одного большого",
+          "meaning": "Класс не должен реализовывать то, что ему не нужно",
+          "code": "// ПЛОХО — один толстый интерфейс\ninterface Worker {\n    public function work();\n    public function eat();\n    public function sleep();\n}\n\n// Робот обязан есть и спать? Нет.\n\n// ХОРОШО — разделили\ninterface Workable { public function work(); }\ninterface Eatable { public function eat(); }\ninterface Sleepable { public function sleep(); }\n\nclass Human implements Workable, Eatable, Sleepable { ... }\nclass Robot implements Workable { ... }",
+          "human": "Не заставляй классы реализовывать лишние методы. Разделяй интерфейсы."
+        },
+        { "type": "heading", "text": "6. D — Dependency Inversion" },
+        {
+          "type": "symbol-card",
+          "symbol": "Зависимость от абстракций, не от конкретных классов",
+          "meaning": "Класс не создаёт зависимости сам — ему их передают",
+          "code": "// ПЛОХО — жёсткая зависимость\nclass UserService {\n    public function register($data) {\n        $db = new MySQLDatabase();  // привязка к MySQL\n        $db->save($data);\n    }\n}\n\n// ХОРОШО — зависимость через интерфейс\ninterface Database {\n    public function save(array $data): void;\n}\n\nclass UserService {\n    public function __construct(private Database $db) {}\n\n    public function register($data) {\n        $this->db->save($data);\n    }\n}\n\n// Можно подставить MySQL, Postgres, мок для теста\n$service = new UserService(new MySQLDatabase());",
+          "human": "Класс не знает, какая БД. Ему передают любую, реализующую интерфейс. Легко тестировать."
+        },
+        { "type": "heading", "text": "7. Как это связано с DI-контейнером" },
+        {
+          "type": "symbol-card",
+          "symbol": "Dependency Injection",
+          "meaning": "Внешний код создаёт и передаёт зависимости",
+          "code": "// Laravel делает это сам\nclass UserController {\n    public function __construct(\n        private UserRepository $users,\n        private Mailer $mailer,\n    ) {}\n}\n\n// Laravel автоматически подставит нужные объекты",
+          "human": "DI-контейнер — «фабрика», которая знает, как создавать зависимости. Ты просто объявляешь, что нужно."
+        },
+        { "type": "heading", "text": "8. Как запомнить" },
+        {
+          "type": "table",
+          "title": "Шпаргалка SOLID",
+          "rows": [
+            { "code": "S", "desc": "класс делает одно" },
+            { "code": "O", "desc": "расширяй, не меняй" },
+            { "code": "L", "desc": "наследник = родитель" },
+            { "code": "I", "desc": "много маленьких интерфейсов" },
+            { "code": "D", "desc": "зависимости — через интерфейсы" }
+          ]
+        },
+        {
+          "type": "note",
+          "html": "<strong>Главное:</strong> SOLID — 5 принципов. Не догма, но ориентир. S — один класс, одна задача. O — расширяй, не меняй. L — наследник не ломает родителя. I — маленькие интерфейсы. D — зависимость от абстракций.<br><br><strong>Домашка:</strong> возьми свой старый WP-плагин. Найди в нём нарушение хотя бы одного принципа SOLID. Перепиши этот кусок по-новому."
+        }
+      ]
+    },
+    
+    {
+      "id": "lesson28",
+      "title": "Урок 28. Паттерны проектирования",
+      "subtitle": "Проверенные решения типовых задач. Singleton, Factory, Repository, Strategy.",
+      "blocks": [
+        { "type": "heading", "text": "1. Что такое паттерн" },
+        {
+          "type": "symbol-card",
+          "symbol": "Паттерн",
+          "meaning": "Типовое решение типовой задачи",
+          "text": "Не код, а идея. Как «рецепт» — можно адаптировать под себя. Их описали в книге «Банды четырёх» (GoF).",
+          "code": "Паттерны делятся на:\n• Порождающие — как создавать объекты\n• Структурные — как собирать из классов\n• Поведенческие — как общаться",
+          "human": "Знать паттерны — говорить на одном языке с командой. «Тут нужен Repository» — и всем ясно."
+        },
+        { "type": "heading", "text": "2. Singleton" },
+        {
+          "type": "symbol-card",
+          "symbol": "Singleton",
+          "meaning": "Один объект на всю программу",
+          "code": "class Database {\n    private static ?Database $instance = null;\n\n    private function __construct() {}\n\n    public static function getInstance(): Database {\n        if (self::$instance === null) {\n            self::$instance = new self();\n        }\n        return self::$instance;\n    }\n}\n\n$db = Database::getInstance();",
+          "human": "Конструктор private — снаружи new нельзя. Только через getInstance, который создаёт один раз."
+        },
+        {
+          "type": "warn",
+          "html": "⚠️ <strong>Singleton — антипаттерн</strong> в 90% случаев. Он ломает тесты, скрывает зависимости. Используй только для реально глобальных вещей (логгер, соединение). В современном PHP — DI-контейнер вместо Singleton."
+        },
+        { "type": "heading", "text": "3. Factory — фабрика" },
+        {
+          "type": "symbol-card",
+          "symbol": "Factory",
+          "meaning": "Создавать объекты через отдельный метод",
+          "code": "interface PaymentMethod {\n    public function pay(float $amount): bool;\n}\n\nclass PaymentFactory {\n    public static function create(string $type): PaymentMethod {\n        return match($type) {\n            'card'   => new CardPayment(),\n            'paypal' => new PaypalPayment(),\n            'crypto' => new CryptoPayment(),\n            default  => throw new InvalidArgumentException(\"Неизвестный: $type\"),\n        };\n    }\n}\n\n$payment = PaymentFactory::create('card');\n$payment->pay(1000);",
+          "human": "Клиент не знает, какой класс создавать. Говорит «card» — фабрика решает. Легко добавить новый тип."
+        },
+        { "type": "heading", "text": "4. Repository — хранилище" },
+        {
+          "type": "symbol-card",
+          "symbol": "Repository",
+          "meaning": "Абстракция над БД",
+          "code": "interface UserRepository {\n    public function find(int $id): ?User;\n    public function findByEmail(string $email): ?User;\n    public function save(User $user): void;\n    public function delete(int $id): void;\n}\n\nclass MySQLUserRepository implements UserRepository {\n    public function __construct(private PDO $pdo) {}\n\n    public function find(int $id): ?User {\n        $stmt = $this->pdo->prepare(\"SELECT * FROM users WHERE id = :id\");\n        $stmt->execute(['id' => $id]);\n        $row = $stmt->fetch();\n        return $row ? new User($row['name']) : null;\n    }\n    // ...\n}",
+          "human": "Код работает с интерфейсом. Легко заменить MySQL на память, API, файл. И тестировать без БД."
+        },
+        { "type": "heading", "text": "5. Strategy — стратегия" },
+        {
+          "type": "symbol-card",
+          "symbol": "Strategy",
+          "meaning": "Разные алгоритмы под одним интерфейсом",
+          "code": "interface ShippingStrategy {\n    public function calculate(float $weight): float;\n}\n\nclass CourierShipping implements ShippingStrategy {\n    public function calculate(float $weight): float {\n        return 500 + $weight * 50;\n    }\n}\n\nclass PostShipping implements ShippingStrategy {\n    public function calculate(float $weight): float {\n        return 200 + $weight * 30;\n    }\n}\n\nclass Order {\n    public function __construct(\n        private ShippingStrategy $shipping\n    ) {}\n\n    public function deliveryCost(float $weight): float {\n        return $this->shipping->calculate($weight);\n    }\n}",
+          "human": "Способ доставки — как «стратегия». Меняешь объект — меняется поведение. Без if/else."
+        },
+        { "type": "heading", "text": "6. Observer — наблюдатель" },
+        {
+          "type": "symbol-card",
+          "symbol": "Observer",
+          "meaning": "Подписчики получают уведомления о событии",
+          "code": "interface Observer {\n    public function update(string $event): void;\n}\n\nclass EmailNotifier implements Observer {\n    public function update(string $event): void {\n        echo \"Email: $event\\n\";\n    }\n}\n\nclass EventManager {\n    private array $observers = [];\n\n    public function subscribe(Observer $o): void {\n        $this->observers[] = $o;\n    }\n\n    public function notify(string $event): void {\n        foreach ($this->observers as $o) {\n            $o->update($event);\n        }\n    }\n}\n\n$manager = new EventManager();\n$manager->subscribe(new EmailNotifier());\n$manager->notify('Заказ создан');",
+          "human": "Один объект (менеджер) сообщает всем подписчикам. Классика — события в Laravel, хуки в WP."
+        },
+        { "type": "heading", "text": "7. Facade — фасад" },
+        {
+          "type": "symbol-card",
+          "symbol": "Facade",
+          "meaning": "Простой интерфейс к сложной системе",
+          "code": "class OrderFacade {\n    public function __construct(\n        private PaymentService $payment,\n        private InventoryService $inventory,\n        private Mailer $mailer,\n    ) {}\n\n    public function placeOrder(array $data): void {\n        $this->inventory->reserve($data['items']);\n        $this->payment->charge($data['amount']);\n        $this->mailer->send($data['email'], 'Заказ оформлен');\n    }\n}\n\n// Клиент — одна строка\n$facade = new OrderFacade($payment, $inventory, $mailer);\n$facade->placeOrder($orderData);",
+          "human": "Скрывает 10 вызовов за одним методом. Клиенту не надо знать про все сервисы."
+        },
+        { "type": "heading", "text": "8. Что использовать" },
+        {
+          "type": "table",
+          "title": "Шпаргалка",
+          "rows": [
+            { "code": "Singleton", "desc": "один объект (антипаттерн, осторожно)" },
+            { "code": "Factory", "desc": "создание объектов по типу" },
+            { "code": "Repository", "desc": "абстракция над данными" },
+            { "code": "Strategy", "desc": "разные алгоритмы, один интерфейс" },
+            { "code": "Observer", "desc": "события и подписки" },
+            { "code": "Facade", "desc": "упрощение сложного API" },
+            { "code": "Decorator", "desc": "обернуть объект и дополнить" },
+            { "code": "Adapter", "desc": "привести чужой API к своему" }
+          ]
+        },
+        {
+          "type": "note",
+          "html": "<strong>Главное:</strong> паттерн — типовое решение. Factory — создавать. Repository — абстрагировать БД. Strategy — менять алгоритм. Observer — события. Facade — упрощать. Singleton — избегать.<br><br><strong>Домашка:</strong> сделай систему уведомлений. Интерфейс <code>Notifier</code> с методом <code>send($msg)</code>. Классы <code>EmailNotifier</code>, <code>SmsNotifier</code>, <code>PushNotifier</code>. Через <code>NotifierFactory</code> создавай нужный. Через <code>NotifierManager</code> рассылай всем сразу."
+        }
+      ]
+    },
+    
+    {
+      "id": "lesson29",
+      "title": "Урок 29. Dependency Injection",
+      "subtitle": "Как передавать зависимости. Контейнеры, autowiring, тестируемость.",
+      "blocks": [
+        { "type": "heading", "text": "1. Проблема: жёсткие связи" },
+        {
+          "type": "symbol-card",
+          "symbol": "Жёсткая зависимость",
+          "meaning": "Класс сам создаёт то, что ему нужно",
+          "code": "class UserService {\n    public function register(array $data) {\n        $db = new MySQLDatabase();    // создаём сами\n        $mailer = new SmtpMailer();   // и это тоже\n\n        $db->save($data);\n        $mailer->send($data['email'], 'Добро пожаловать');\n    }\n}",
+          "human": "Проблема: нельзя подменить MySQLDatabase на что-то другое. Нельзя тестировать без реальной БД."
+        },
+        { "type": "heading", "text": "2. Решение: передавать зависимости" },
+        {
+          "type": "symbol-card",
+          "symbol": "Constructor injection",
+          "meaning": "Зависимости приходят в конструктор",
+          "code": "interface Database {\n    public function save(array $data): void;\n}\ninterface Mailer {\n    public function send(string $to, string $msg): void;\n}\n\nclass UserService {\n    public function __construct(\n        private Database $db,\n        private Mailer $mailer,\n    ) {}\n\n    public function register(array $data) {\n        $this->db->save($data);\n        $this->mailer->send($data['email'], 'Добро пожаловать');\n    }\n}",
+          "human": "Класс не знает, что за БД и почта. Ему передают любые, реализующие интерфейс."
+        },
+        { "type": "heading", "text": "3. Использование" },
+        {
+          "type": "symbol-card",
+          "symbol": "new UserService(...)",
+          "meaning": "Собираем объект снаружи",
+          "code": "$db = new MySQLDatabase($pdo);\n$mailer = new SmtpMailer($config);\n\n$service = new UserService($db, $mailer);\n$service->register($data);\n\n// В тестах — моки\n$service = new UserService(\n    new FakeDatabase(),\n    new FakeMailer()\n);",
+          "human": "В проде — реальные. В тестах — фейковые. Класс UserService не меняется."
+        },
+        { "type": "heading", "text": "4. DI-контейнер" },
+        {
+          "type": "symbol-card",
+          "symbol": "Container",
+          "meaning": "Объект, который создаёт и хранит зависимости",
+          "code": "class Container {\n    private array $bindings = [];\n\n    public function bind(string $interface, callable $factory): void {\n        $this->bindings[$interface] = $factory;\n    }\n\n    public function make(string $class): object {\n        if (isset($this->bindings[$class])) {\n            return ($this->bindings[$class])();\n        }\n        return new $class();\n    }\n}\n\n$container = new Container();\n$container->bind(Database::class, fn() => new MySQLDatabase($pdo));\n$container->bind(Mailer::class, fn() => new SmtpMailer($config));\n\n$service = $container->make(UserService::class);",
+          "human": "Контейнер знает, как создавать зависимости. Клиент просто просит «дай мне UserService»."
+        },
+        { "type": "heading", "text": "5. Autowiring — автомагия" },
+        {
+          "type": "symbol-card",
+          "symbol": "Reflection",
+          "meaning": "Контейнер сам смотрит, что нужно классу",
+          "code": "// Laravel делает это автоматически\nclass UserController {\n    public function __construct(\n        private UserRepository $users,\n        private Mailer $mailer,\n    ) {}\n}\n\n// Просто говорим:\n$controller = app(UserController::class);\n// Laravel через рефлексию видит: нужен UserRepository и Mailer\n// Создаёт их сам и подставляет",
+          "human": "Через ReflectionClass контейнер читает конструктор и создаёт всё, что нужно. Рекурсивно."
+        },
+        { "type": "heading", "text": "6. Три способа внедрения" },
+        {
+          "type": "grid-2",
+          "cards": [
+            { "type": "symbol-card", "symbol": "Constructor", "meaning": "Через конструктор (лучший)", "code": "public function __construct(\n    private Database $db\n) {}" },
+            { "type": "symbol-card", "symbol": "Setter", "meaning": "Через метод", "code": "public function setDb(Database $db) {\n    $this->db = $db;\n}" },
+            { "type": "symbol-card", "symbol": "Method", "meaning": "В метод напрямую", "code": "public function save(\n    Database $db, array $data\n) {}" }
+          ]
+        },
+        { "type": "heading", "text": "7. Зачем это всё" },
+        {
+          "type": "table",
+          "title": "Что даёт DI",
+          "rows": [
+            { "code": "Тестируемость", "desc": "легко подменить мок" },
+            { "code": "Гибкость", "desc": "можно менять реализацию" },
+            { "code": "Читаемость", "desc": "видно, от чего зависит класс" },
+            { "code": "SOLID", "desc": "соблюдает D (Dependency Inversion)" }
+          ]
+        },
+        {
+          "type": "symbol-card",
+          "symbol": "Пример теста",
+          "meaning": "Проверить без БД",
+          "code": "class FakeMailer implements Mailer {\n    public array $sent = [];\n    public function send(string $to, string $msg): void {\n        $this->sent[] = ['to' => $to, 'msg' => $msg];\n    }\n}\n\n$mailer = new FakeMailer();\n$service = new UserService(new FakeDatabase(), $mailer);\n$service->register(['email' => 'test@mail.ru']);\n\nassert(count($mailer->sent) === 1);",
+          "human": "Подставили фейковый Mailer, проверили, что send вызвался. Реальная почта не нужна."
+        },
+        { "type": "heading", "text": "8. DI в Laravel" },
+        {
+          "type": "symbol-card",
+          "symbol": "Service Providers",
+          "meaning": "Где связывают интерфейсы с реализациями",
+          "code": "// app/Providers/AppServiceProvider.php\npublic function register(): void\n{\n    $this->app->bind(\n        \\App\\Contracts\\PaymentGateway::class,\n        \\App\\Services\\StripeGateway::class\n    );\n}",
+          "human": "Laravel знает: «когда кто-то просит PaymentGateway — дай StripeGateway»."
+        },
+        {
+          "type": "note",
+          "html": "<strong>Главное:</strong> DI — «не создавай зависимости, получай их». Constructor injection — лучший способ. DI-контейнер создаёт объекты. Autowiring — через Reflection. Laravel делает это автоматически.<br><br><strong>Домашка:</strong> сделай класс <code>ReportGenerator</code>, который принимает <code>Database</code> и <code>Logger</code> через конструктор. Напиши фейковые реализации и протестируй без реальной БД."
+        }
+      ]
+    },
+    
+    {
+      "id": "lesson30",
+      "title": "Урок 30. Тестирование (PHPUnit)",
+      "subtitle": "Как писать тесты. Unit-тесты, assertions, моки, TDD.",
+      "blocks": [
+        { "type": "heading", "text": "1. Зачем тесты" },
+        {
+          "type": "symbol-card",
+          "symbol": "Проблема",
+          "meaning": "Поменял одно — сломалось другое",
+          "text": "Без тестов каждое изменение — лотерея. Тесты ловят регрессии за секунды.",
+          "code": "// Без тестов\n// Изменил код → задеплоил → пользователи нашли баг\n\n// С тестами\n// Изменил код → запустил phpunit → 2 секунды → баг найден локально",
+          "human": "Тесты — «страховка». Ловят баги до того, как их найдут пользователи."
+        },
+        { "type": "heading", "text": "2. Установка PHPUnit" },
+        {
+          "type": "symbol-card",
+          "symbol": "composer require",
+          "meaning": "Ставим через Composer",
+          "code": "composer require --dev phpunit/phpunit\n\n# Запуск\n./vendor/bin/phpunit tests/",
+          "human": "--dev — только для разработки, не для прода. Запускается из консоли."
+        },
+        { "type": "heading", "text": "3. Первый тест" },
+        {
+          "type": "symbol-card",
+          "symbol": "TestCase",
+          "meaning": "Класс с тестами",
+          "code": "use PHPUnit\\Framework\\TestCase;\n\nclass CalculatorTest extends TestCase\n{\n    public function test_add_returns_sum(): void\n    {\n        $calc = new Calculator();\n        $result = $calc->add(2, 3);\n\n        $this->assertEquals(5, $result);\n    }\n}",
+          "human": "Класс наследует TestCase. Метод с test_ — это тест. assert проверяет."
+        },
+        {
+          "type": "warn",
+          "html": "⚠️ Имя метода должно начинаться с <code>test</code> или иметь аннотацию <code>/** @test */</code>. Иначе PHPUnit его не запустит."
+        },
+        { "type": "heading", "text": "4. Основные assertions" },
+        {
+          "type": "table",
+          "title": "Проверки",
+          "rows": [
+            { "code": "assertEquals($exp, $act)", "desc": "равно" },
+            { "code": "assertSame($exp, $act)", "desc": "равно и того же типа" },
+            { "code": "assertTrue($x)", "desc": "истина" },
+            { "code": "assertFalse($x)", "desc": "ложь" },
+            { "code": "assertNull($x)", "desc": "null" },
+            { "code": "assertCount(3, $arr)", "desc": "3 элемента" },
+            { "code": "assertEmpty($arr)", "desc": "пустой" },
+            { "code": "assertContains(5, $arr)", "desc": "есть 5" },
+            { "code": "assertInstanceOf(Foo::class, $x)", "desc": "объект класса Foo" },
+            { "code": "expectException(MyException::class)", "desc": "ожидаем исключение" }
+          ]
+        },
+        { "type": "heading", "text": "5. Тест на исключение" },
+        {
+          "type": "symbol-card",
+          "symbol": "expectException",
+          "meaning": "Проверить, что бросается исключение",
+          "code": "public function test_divide_by_zero_throws(): void\n{\n    $this->expectException(InvalidArgumentException::class);\n    $this->expectExceptionMessage('Деление на ноль');\n\n    $calc = new Calculator();\n    $calc->divide(10, 0);\n}",
+          "human": "Говорим: «ожидаю исключение». Если оно не бросится — тест провален."
+        },
+        { "type": "heading", "text": "6. setUp и tearDown" },
+        {
+          "type": "symbol-card",
+          "symbol": "setUp",
+          "meaning": "Выполняется перед каждым тестом",
+          "code": "class UserServiceTest extends TestCase\n{\n    private UserService $service;\n\n    protected function setUp(): void\n    {\n        $this->service = new UserService(\n            new FakeDatabase(),\n            new FakeMailer()\n        );\n    }\n\n    public function test_register(): void\n    {\n        // $this->service уже готов\n    }\n}",
+          "human": "setUp — подготовка перед каждым тестом. tearDown — уборка после."
+        },
+        { "type": "heading", "text": "7. Моки" },
+        {
+          "type": "symbol-card",
+          "symbol": "createMock",
+          "meaning": "Фейковый объект для теста",
+          "code": "use App\\Services\\Mailer;\n\npublic function test_welcome_email_sent(): void\n{\n    $mailer = $this->createMock(Mailer::class);\n\n    // Ожидаем, что send вызовется ровно 1 раз\n    $mailer->expects($this->once())\n        ->method('send')\n        ->with('tim@mail.ru', 'Добро пожаловать');\n\n    $service = new UserService(new FakeDatabase(), $mailer);\n    $service->register(['email' => 'tim@mail.ru']);\n}",
+          "human": "createMock создаёт заглушку. expects + method + with — проверяют, что метод вызвали с нужными аргументами."
+        },
+        { "type": "heading", "text": "8. TDD — Test Driven Development" },
+        {
+          "type": "symbol-card",
+          "symbol": "Red → Green → Refactor",
+          "meaning": "Сначала тест, потом код",
+          "code": "// 1. RED — пишем тест, он падает\npublic function test_sum_returns_total(): void\n{\n    $this->assertEquals(6, sum([1, 2, 3]));\n}\n// sum() ещё не существует → тест красный\n\n// 2. GREEN — пишем минимум, чтобы тест прошёл\nfunction sum(array $nums): int {\n    return array_sum($nums);\n}\n\n// 3. REFACTOR — улучшаем, тесты остаются зелёными",
+          "human": "Сначала тест — потом реализация. Так пишут только то, что нужно. И сразу с проверкой."
+        },
+        { "type": "heading", "text": "9. Что тестировать" },
+        {
+          "type": "table",
+          "title": "Приоритеты",
+          "rows": [
+            { "code": "Unit", "desc": "один класс/метод в изоляции", "example": "Calculator, Validator" },
+            { "code": "Integration", "desc": "несколько классов вместе", "example": "UserService + Repository" },
+            { "code": "Functional", "desc": "весь HTTP-запрос", "example": "GET /users возвращает 200" }
+          ]
+        },
+        {
+          "type": "symbol-card",
+          "symbol": "Правила",
+          "meaning": "Хорошие тесты",
+          "code": "• Один тест — одна проверка\n• Имя теста описывает поведение\n• Не зависят от порядка запуска\n• Быстрые (секунды, не минуты)\n• Не лезут в реальную БД / почту",
+          "human": "Тест — как документация. Читаешь имя — понимаешь, что проверяется."
+        },
+        {
+          "type": "note",
+          "html": "<strong>Главное:</strong> PHPUnit — стандарт тестов в PHP. Тесты в <code>tests/</code>. Методы <code>test*</code>. <code>assert*</code> проверяют. <code>setUp</code> — перед каждым. <code>createMock</code> — заглушки. TDD — сначала тест, потом код.<br><br><strong>Домашка:</strong> напиши класс <code>PasswordValidator</code> с методом <code>validate($password)</code> — проверяет длину, наличие букв и цифр. Напиши 4 теста: короткий пароль, без цифр, без букв, валидный. Через TDD."
+        }
+      ]
+    }
+  ]
+}
